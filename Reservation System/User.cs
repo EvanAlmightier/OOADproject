@@ -10,9 +10,9 @@ namespace Reservation_System
     {
         protected static int nextID = 1;
 
-        protected int id;
-        protected string name;
-        protected string email;
+        public int id { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
         protected int reservationCount;
 
         public User()

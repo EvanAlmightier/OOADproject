@@ -10,11 +10,11 @@ namespace Reservation_System
     {
         protected static int nextID = 1;
 
-        protected int id { get; set; }
-        protected int reservedBy { get; set; }
-        protected int reservable { get; set; }
-        protected DateTime resStart { get; set; }
-        protected DateTime resEnd { get; set; }
+        public int id { get; set; }
+        public int reservedBy { get; set; }
+        public int reservable { get; set; }
+        public DateTime resStart { get; set; }
+        public DateTime resEnd { get; set; }
 
         /// <summary>
         /// default constructor
@@ -31,11 +31,30 @@ namespace Reservation_System
         /// <summary>
         /// constructor
         /// </summary>
+        /// <param name="ID">reservation ID</param>
         /// <param name="userID">user ID for user making reservation</param>
         /// <param name="res">ID of reservable being reserved</param>
         /// <param name="date">DateTime of reservation</param>
         /// <param name="duration">duration of the reservation</param>
-        public Reservation(int userID, int res, DateTime date, double duration)
+        public Reservation(int ID, int userID, int res, DateTime date,
+            double duration)
+        {
+            id = ID;
+            reservedBy = userID;
+            reservable = res;
+            resStart = date;
+            resEnd = date.AddHours(duration);
+        }
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="userID">user ID for user making reservation</param>
+        /// <param name="res">ID of reservable being reserved</param>
+        /// <param name="date">DateTime of reservation</param>
+        /// <param name="duration">duration of the reservation</param>
+        public Reservation(int userID, int res, DateTime date,
+            double duration)
         {
             id = nextID++;
             reservedBy = userID;

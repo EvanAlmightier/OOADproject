@@ -10,12 +10,12 @@ namespace Reservation_System
    {
       protected List<Computer> computerList;
 
-      Room(int ID, bool r):base(ID,r)
+      public Room(int ID, bool r):base(ID,r)
       {
          computerList = new List<Computer>();
       }
 
-      Room(bool r = false) : base(r)
+      public Room(bool r = false) : base(r)
       {
          computerList = new List<Computer>();
       }
