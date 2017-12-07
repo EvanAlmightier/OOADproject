@@ -14,7 +14,12 @@ namespace Reservation_System
 
       }
 
-      public override string GetType()
+      public Computer(bool r = false) : base(r)
+      {
+
+      }
+
+        public override string GetType()
       {
          return "Computer";
       }

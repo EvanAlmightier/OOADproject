@@ -8,9 +8,11 @@ namespace Reservation_System
 {
    class Reservable
    {
+      protected static int nextID = 1;
+        
       public int id { get; set; }
       protected bool reserved;
-
+        
       /// <summary>
       /// constructor
       /// </summary>
@@ -19,6 +21,13 @@ namespace Reservation_System
       public Reservable(int ID, bool r = false)
       {
          id = ID;
+         reserved = r;
+         nextID = ++id;
+      }
+
+      public Reservable(bool r = false)
+      {
+         id = nextID++;
          reserved = r;
       }
 

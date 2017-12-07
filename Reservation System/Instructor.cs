@@ -14,7 +14,12 @@ namespace Reservation_System
 
         }
 
-        public Instructor(string ID, string Name, string Email):base(ID,Name,Email)
+        public Instructor(int ID, string Name, string Email):base(ID,Name,Email)
+        {
+
+        }
+
+        public Instructor(string Name, string Email):base(Name,Email)
         {
 
         }

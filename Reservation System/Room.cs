@@ -15,6 +15,11 @@ namespace Reservation_System
          computerList = new List<Computer>();
       }
 
+      Room(bool r = false) : base(r)
+      {
+         computerList = new List<Computer>();
+      }
+
       public bool AddComputer(Computer c)
       {
          if (!ComputerInList(c.id))

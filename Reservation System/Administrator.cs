@@ -9,7 +9,12 @@ namespace Reservation_System
     class Administrator : User
     {
 
-        public Administrator(string ID, string Name, string Email):base(ID,Name,Email)
+        public Administrator(int ID, string Name, string Email):base(ID,Name,Email)
+        {
+
+        }
+
+        public Administrator(string Name, string Email):base(Name,Email)
         {
 
         }

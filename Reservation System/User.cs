@@ -8,7 +8,9 @@ namespace Reservation_System
 {
     class User
     {
-        protected string id;
+        protected static int nextID = 1;
+
+        protected int id;
         protected string name;
         protected string email;
         protected int reservationCount;
@@ -18,9 +20,17 @@ namespace Reservation_System
 
         }
 
-        public User(string ID, string Name, string Email)
+        public User(int ID, string Name, string Email)
         {
             id = ID;
+            name = Name;
+            email = Email;
+            nextID = ++id;
+        }
+
+        public User(string Name, string Email)
+        {
+            id = nextID++;
             name = Name;
             email = Email;
         }
