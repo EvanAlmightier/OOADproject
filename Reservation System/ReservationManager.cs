@@ -11,7 +11,7 @@ namespace Reservation_System
 {
     class ReservationManager
     {
-        public Dictionary<int, User> users { get; set; }
+        public Dictionary<int, User> Users { get; set; }
         public Dictionary<int, Reservable> reservables { get; set; }
         public Dictionary<int, Reservation> reservations { get; set; }
 
@@ -22,20 +22,20 @@ namespace Reservation_System
         {
             // read in from text files to each map
             // initialize static variables to next id
-            readUsers();
-            readReservables();
-            readReservations();
+            ReadUsers();
+            ReadReservables();
+            ReadReservations();
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool save()
+        public bool Save()
         {
-            bool users = saveUsers();
-            bool reservables = saveReservables();
-            bool reservations = saveReservations();
+            bool users = SaveUsers();
+            bool reservables = SaveReservables();
+            bool reservations = SaveReservations();
             return users && reservables && reservations;
         }
 
@@ -46,7 +46,7 @@ namespace Reservation_System
         /// <param name="name"></param>
         /// <param name="email"></param>
         /// <returns></returns>
-        public bool addUser(string type, string name, string email)
+        public bool AddUser(string type, string name, string email)
         {
             User toAdd = null;
             if (type == "student")
@@ -64,7 +64,7 @@ namespace Reservation_System
             else
                 return false;
 
-            users.Add(toAdd.id, toAdd);
+            Users.Add(toAdd.id, toAdd);
             return true;
         }
 
@@ -76,7 +76,7 @@ namespace Reservation_System
         /// <param name="name"></param>
         /// <param name="email"></param>
         /// <returns></returns>
-        public bool addUser(int id, string type, string name,
+        public bool AddUser(int id, string type, string name,
             string email)
         {
             User toAdd = null;
@@ -95,7 +95,7 @@ namespace Reservation_System
             else
                 return false;
 
-            users.Add(id, toAdd);
+            Users.Add(id, toAdd);
             return true;
         }
 
@@ -104,11 +104,11 @@ namespace Reservation_System
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool removeUser(int id)
+        public bool RemoveUser(int id)
         {
-            if (users.ContainsKey(id))
+            if (Users.ContainsKey(id))
             {
-                users.Remove(id);
+                Users.Remove(id);
                 return true;
             }
             return false;
@@ -119,10 +119,10 @@ namespace Reservation_System
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public User getUser(int id)
+        public User GetUser(int id)
         {
             User toGet = null;
-            bool found = users.TryGetValue(id, out toGet);
+            bool found = Users.TryGetValue(id, out toGet);
             if (found)
                 return toGet;
             else
@@ -137,12 +137,12 @@ namespace Reservation_System
         /// <param name="name"></param>
         /// <param name="email"></param>
         /// <returns></returns>
-        public bool editUser(int id, string type, string name, string email)
+        public bool EditUser(int id, string type, string name, string email)
         {
-            if (users.ContainsKey(id))
+            if (Users.ContainsKey(id))
             {
-                removeUser(id);
-                addUser(id, type, name, email);
+                RemoveUser(id);
+                AddUser(id, type, name, email);
                 return true;
             }
             return false;
@@ -152,10 +152,10 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public SortedList<string, User> sortByName()
+        public SortedList<string, User> SortByName()
         {
             SortedList<string, User> names = new SortedList<string, User>();
-            foreach(KeyValuePair<int, User> element in users)
+            foreach(KeyValuePair<int, User> element in Users)
             {
                 names.Add(element.Value.name, element.Value);
             }
@@ -168,7 +168,7 @@ namespace Reservation_System
         /// <param name="type"></param>
         /// <param name="reserved"></param>
         /// <returns></returns>
-        public bool addReservable(string type, bool reserved)
+        public bool AddReservable(string type, bool reserved)
         {
             Reservable toAdd = null;
             if (type == "Computer")
@@ -193,7 +193,7 @@ namespace Reservation_System
         /// <param name="type"></param>
         /// <param name="reserved"></param>
         /// <returns></returns>
-        public bool addReservable(int id, string type, bool reserved)
+        public bool AddReservable(int id, string type, bool reserved)
         {
             Reservable toAdd = null;
             if (type == "Computer")
@@ -216,7 +216,7 @@ namespace Reservation_System
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool removeReservable(int id)
+        public bool RemoveReservable(int id)
         {
             if (reservables.ContainsKey(id))
             {
@@ -231,7 +231,7 @@ namespace Reservation_System
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Reservable getReservable(int id)
+        public Reservable GetReservable(int id)
         {
             Reservable toGet = null;
             bool found = reservables.TryGetValue(id, out toGet);
@@ -248,19 +248,19 @@ namespace Reservation_System
         /// <param name="type"></param>
         /// <param name="reserved"></param>
         /// <returns></returns>
-        public bool editReservable(int id, string type, bool reserved)
+        public bool EditReservable(int id, string type, bool reserved)
         {
             if (reservables.ContainsKey(id))
             {
-                removeReservable(id);
-                addReservable(id, type, reserved);
+                RemoveReservable(id);
+                AddReservable(id, type, reserved);
                 return true;
             }
             return false;
         }
 
 
-        public SortedList<string, Reservable> sortByType()
+        public SortedList<string, Reservable> SortByType()
         {
             SortedList<string, Reservable> types = new SortedList<string, Reservable>();
             foreach (KeyValuePair<int, Reservable> element in reservables)
@@ -278,10 +278,10 @@ namespace Reservation_System
         /// <param name="date"></param>
         /// <param name="duration"></param>
         /// <returns></returns>
-        public bool addReservation(int user, int reservable,
+        public bool AddReservation(int user, int reservable,
             DateTime date, double duration)
         {
-            if (!available(reservable, date, duration))
+            if (!Available(reservable, date, duration))
                 return false;
             Reservation toAdd = new Reservation(user, reservable,
                 date, duration);
@@ -298,10 +298,10 @@ namespace Reservation_System
         /// <param name="date"></param>
         /// <param name="duration"></param>
         /// <returns></returns>
-        public bool addReservation(int id, int user, int reservable,
+        public bool AddReservation(int id, int user, int reservable,
             DateTime date, double duration)
         {
-            if (!available(reservable, date, duration))
+            if (!Available(reservable, date, duration))
                 return false;
             Reservation toAdd = new Reservation(id, user, reservable,
                 date, duration);
@@ -314,7 +314,7 @@ namespace Reservation_System
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool removeReservation(int id)
+        public bool RemoveReservation(int id)
         {
             if (reservations.ContainsKey(id))
             {
@@ -329,7 +329,7 @@ namespace Reservation_System
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Reservation getReservation(int id)
+        public Reservation GetReservation(int id)
         {
             Reservation toGet = null;
             bool found = reservations.TryGetValue(id, out toGet);
@@ -348,13 +348,13 @@ namespace Reservation_System
         /// <param name="date"></param>
         /// <param name="duration"></param>
         /// <returns></returns>
-        public bool editReservation(int id, int user, int reservable,
+        public bool EditReservation(int id, int user, int reservable,
             DateTime date, double duration)
         {
             if (reservations.ContainsKey(id))
             {
-                removeReservation(id);
-                addReservation(id, user, reservable, date, duration);
+                RemoveReservation(id);
+                AddReservation(id, user, reservable, date, duration);
                 return true;
             }
             return false;
@@ -364,7 +364,7 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public SortedList<int, Reservation> sortByUser()
+        public SortedList<int, Reservation> SortByUser()
         {
             SortedList<int, Reservation> sort = new SortedList<int, Reservation>();
             foreach (KeyValuePair<int, Reservation> element in reservations)
@@ -378,7 +378,7 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public SortedList<int, Reservation> sortByReservable()
+        public SortedList<int, Reservation> SortByReservable()
         {
             SortedList<int, Reservation> sort = new SortedList<int, Reservation>();
             foreach (KeyValuePair<int, Reservation> element in reservations)
@@ -392,7 +392,7 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public SortedList<DateTime, Reservation> sortByStart()
+        public SortedList<DateTime, Reservation> SortByStart()
         {
             SortedList<DateTime, Reservation> sort = new SortedList<DateTime, Reservation>();
             foreach (KeyValuePair<int, Reservation> element in reservations)
@@ -412,11 +412,11 @@ namespace Reservation_System
         // TODO: use filter to get just reservations for specified reservable
         // TODO: check each reservation time against the specified times
 
-        public bool available(int id, DateTime start, double duration)
+        public bool Available(int id, DateTime start, double duration)
         {
             DateTime end = start.AddHours(duration);
 
-            SortedList<int, Reservation > sorted = sortByReservable();
+            SortedList<int, Reservation > sorted = SortByReservable();
 
             foreach(KeyValuePair<int, Reservation> element in sorted)
             {
@@ -440,18 +440,19 @@ namespace Reservation_System
         /// <param name="start"></param>
         /// <param name="duration"></param>
         /// <returns></returns>
-        public SortedList<int, Reservable> getAvailable(string type, DateTime start, int duration)
+        public SortedList<int, Reservable> GetAvailable(string type, DateTime start, int duration)
         {
             SortedList<int, Reservable> available = new SortedList<int, Reservable>();
             if (type != "None")
             {
-                SortedList<string, Reservable> sort = sortByType();
+                SortedList<string, Reservable> sort = SortByType();
 
                 if (type == "Computer")
                 {
                     foreach (KeyValuePair<string, Reservable> element in sort)
                     {
                         if (element.Key == "Computer")
+                            if (Available(element.Value.id, start, duration))
                             available.Add(element.Value.id, element.Value);
                     }
                 }
@@ -473,7 +474,7 @@ namespace Reservation_System
         /// <summary>
         /// 
         /// </summary>
-        public void readUsers()
+        public void ReadUsers()
         {
             
         }
@@ -481,7 +482,7 @@ namespace Reservation_System
         /// <summary>
         /// 
         /// </summary>
-        public void readReservables()
+        public void ReadReservables()
         {
 
         }
@@ -489,7 +490,7 @@ namespace Reservation_System
         /// <summary>
         /// 
         /// </summary>
-        public void readReservations()
+        public void ReadReservations()
         {
 
         }
@@ -498,7 +499,7 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool saveUsers()
+        public bool SaveUsers()
         {
             return true;
         }
@@ -507,7 +508,7 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool saveReservables()
+        public bool SaveReservables()
         {
             return true;
         }
@@ -516,7 +517,7 @@ namespace Reservation_System
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool saveReservations()
+        public bool SaveReservations()
         {
             return true;
         }
