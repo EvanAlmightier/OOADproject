@@ -21,7 +21,7 @@ namespace Reservation_System
 
         public override string GetType()
         {
-            return "administrator";
+            return "Administrator";
         }     
     }
 }

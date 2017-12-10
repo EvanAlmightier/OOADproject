@@ -151,6 +151,20 @@ namespace Reservation_System
         /// <summary>
         /// 
         /// </summary>
+        /// <returns></returns>
+        public SortedList<string, User> sortByName()
+        {
+            SortedList<string, User> names = new SortedList<string, User>();
+            foreach(KeyValuePair<int, User> element in users)
+            {
+                names.Add(element.Value.name, element.Value);
+            }
+            return names;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="type"></param>
         /// <param name="reserved"></param>
         /// <returns></returns>
@@ -245,6 +259,17 @@ namespace Reservation_System
             return false;
         }
 
+
+        public SortedList<string, Reservable> sortByType()
+        {
+            SortedList<string, Reservable> types = new SortedList<string, Reservable>();
+            foreach (KeyValuePair<int, Reservable> element in reservables)
+            {
+                types.Add(element.Value.GetType(), element.Value);
+            }
+            return types;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -256,7 +281,7 @@ namespace Reservation_System
         public bool addReservation(int user, int reservable,
             DateTime date, double duration)
         {
-            if (!available(date, duration))
+            if (!available(reservable, date, duration))
                 return false;
             Reservation toAdd = new Reservation(user, reservable,
                 date, duration);
@@ -276,7 +301,7 @@ namespace Reservation_System
         public bool addReservation(int id, int user, int reservable,
             DateTime date, double duration)
         {
-            if (!available(date, duration))
+            if (!available(reservable, date, duration))
                 return false;
             Reservation toAdd = new Reservation(id, user, reservable,
                 date, duration);
@@ -338,20 +363,73 @@ namespace Reservation_System
         /// <summary>
         /// 
         /// </summary>
+        /// <returns></returns>
+        public SortedList<int, Reservation> sortByUser()
+        {
+            SortedList<int, Reservation> sort = new SortedList<int, Reservation>();
+            foreach (KeyValuePair<int, Reservation> element in reservations)
+            {
+                sort.Add(element.Value.reservedBy, element.Value);
+            }
+            return sort;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public SortedList<int, Reservation> sortByReservable()
+        {
+            SortedList<int, Reservation> sort = new SortedList<int, Reservation>();
+            foreach (KeyValuePair<int, Reservation> element in reservations)
+            {
+                sort.Add(element.Value.reservable, element.Value);
+            }
+            return sort;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public SortedList<DateTime, Reservation> sortByStart()
+        {
+            SortedList<DateTime, Reservation> sort = new SortedList<DateTime, Reservation>();
+            foreach (KeyValuePair<int, Reservation> element in reservations)
+            {
+                sort.Add(element.Value.resStart, element.Value);
+            }
+            return sort;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="start"></param>
         /// <param name="duration"></param>
         /// <returns></returns>
-        
+
         // TODO: use filter to get just reservations for specified reservable
         // TODO: check each reservation time against the specified times
 
-        public bool available(DateTime start, double duration)
+        public bool available(int id, DateTime start, double duration)
         {
             DateTime end = start.AddHours(duration);
-            
-            if (true)
+
+            SortedList<int, Reservation > sorted = sortByReservable();
+
+            foreach(KeyValuePair<int, Reservation> element in sorted)
             {
-                return false;
+                if (element.Key != id)
+                    sorted.Remove(element.Key);
+            }
+
+            foreach(KeyValuePair<int, Reservation> element in sorted)
+            {
+                if (element.Value.resStart >= start && element.Value.resStart <= end)
+                    return false;
+                if (element.Value.resEnd >= start && element.Value.resEnd <= end)
+                    return false;
             }
             return true;
         }
@@ -359,11 +437,45 @@ namespace Reservation_System
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="start"></param>
+        /// <param name="duration"></param>
+        /// <returns></returns>
+        public SortedList<int, Reservable> getAvailable(string type, DateTime start, int duration)
+        {
+            SortedList<int, Reservable> available = new SortedList<int, Reservable>();
+            if (type != "None")
+            {
+                SortedList<string, Reservable> sort = sortByType();
+
+                if (type == "Computer")
+                {
+                    foreach (KeyValuePair<string, Reservable> element in sort)
+                    {
+                        if (element.Key == "Computer")
+                            available.Add(element.Value.id, element.Value);
+                    }
+                }
+                else if (type == "Room")
+                {
+                    foreach (KeyValuePair<string, Reservable> element in sort)
+                    {
+                        if (element.Key == "Room")
+                            available.Add(element.Value.id, element.Value);
+                    }
+                }
+                else
+                    available = null;
+            }
+
+            return available;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public void readUsers()
         {
-            readReservables();
-            readReservations();
-            readUsers();
+            
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Reservation_System
 
         public virtual string GetType()
         {
-            return "user";
+            return "User";
         }
 
         public void CreateReservation()
