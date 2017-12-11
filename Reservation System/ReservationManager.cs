@@ -467,6 +467,13 @@ namespace Reservation_System
                 else
                     available = null;
             }
+            else
+            {
+                foreach (KeyValuePair<string, Reservable> element in sort)
+                {
+                    available.Add(element.Value.id, element.Value);
+                }
+            }
 
             return available;
         }
