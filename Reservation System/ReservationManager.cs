@@ -15,6 +15,8 @@ namespace Reservation_System
         public Dictionary<int, Reservable> Reservables { get; set; }
         public Dictionary<int, Reservation> Reservations{ get; set; }
 
+        public int activeUser { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -38,6 +40,16 @@ namespace Reservation_System
             bool Reservations= SaveReservations();
             return users && Reservables && Reservations;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ActiveUser"></param>
+        public void SetActiveUser(int ActiveUser)
+        {
+            activeUser = ActiveUser;
+        }
+
 
         /// <summary>
         /// 

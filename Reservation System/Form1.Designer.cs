@@ -45,7 +45,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlLogin = new System.Windows.Forms.Panel();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.IDtext = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -99,7 +99,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -299,19 +299,19 @@
             this.createButton.Text = "Create";
             this.createButton.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // pnlLogin
             // 
-            this.panel2.Controls.Add(this.passwordText);
-            this.panel2.Controls.Add(this.IDtext);
-            this.panel2.Controls.Add(this.loginButton);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(988, 634);
-            this.panel2.TabIndex = 17;
+            this.pnlLogin.Controls.Add(this.passwordText);
+            this.pnlLogin.Controls.Add(this.IDtext);
+            this.pnlLogin.Controls.Add(this.loginButton);
+            this.pnlLogin.Controls.Add(this.label3);
+            this.pnlLogin.Controls.Add(this.label2);
+            this.pnlLogin.Controls.Add(this.label1);
+            this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLogin.Location = new System.Drawing.Point(0, 24);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(988, 634);
+            this.pnlLogin.TabIndex = 17;
             // 
             // passwordText
             // 
@@ -335,6 +335,7 @@
             this.loginButton.TabIndex = 9;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label3
             // 
@@ -750,8 +751,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // administratorToolStripMenuItem
             // 
@@ -760,6 +762,7 @@
             this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
             this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.administratorToolStripMenuItem.Text = "Administrator";
+            this.administratorToolStripMenuItem.Visible = false;
             // 
             // managingToolStripMenuItem
             // 
@@ -772,7 +775,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 658);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
@@ -786,8 +789,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -829,7 +832,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.TextBox IDtext;
         private System.Windows.Forms.Button loginButton;
