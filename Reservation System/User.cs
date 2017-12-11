@@ -45,5 +45,15 @@ namespace Reservation_System
             ++reservationCount;
         }
 
+        public string WriteUser()
+        {
+            string user = id.ToString();
+            user = user + "|" + name;
+            user = user + "|" + email;
+            user = user + "|" + GetType();
+
+            return user;
+        }
+
     }
 }

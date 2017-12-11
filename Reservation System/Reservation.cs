@@ -63,5 +63,17 @@ namespace Reservation_System
             resEnd = date.AddHours(duration);
         }
 
+
+        public string WriteRes()
+        {
+            string res = id.ToString();
+            res = res + "|" + reservedBy.ToString();
+            res = res + "|" + reservable.ToString();
+            res = res + "|" + resStart.ToString();
+            res = res + "|" + resEnd.ToString();
+
+            return res;
+        }
+
     }
 }

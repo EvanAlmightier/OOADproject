@@ -54,5 +54,15 @@ namespace Reservation_System
          }
          return true;
       }
+
+      public override string WriteRooms()
+      {
+         string rooms = null;
+         foreach (Computer element in computerList)
+         {
+            rooms = rooms + "|" + element.id;
+         }
+            return rooms;
+      }
    }
 }

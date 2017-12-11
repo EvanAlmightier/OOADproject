@@ -19,9 +19,14 @@ namespace Reservation_System
 
       }
 
-        public override string GetType()
+      public override string GetType()
       {
          return "Computer";
       }
-   }
+
+      public override string WriteRooms()
+      {
+         return base.WriteRooms();
+      }
+    }
 }
