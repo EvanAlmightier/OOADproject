@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 // TODO: Sort functions
-// TODO: Time/Date check for reservations
+// TODO: Time/Date check for Reservations
 
 namespace Reservation_System
 {
     class ReservationManager
     {
         public Dictionary<int, User> Users { get; set; }
-        public Dictionary<int, Reservable> reservables { get; set; }
-        public Dictionary<int, Reservation> reservations { get; set; }
+        public Dictionary<int, Reservable> Reservables { get; set; }
+        public Dictionary<int, Reservation> Reservations{ get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        ReservationManager()
+        public ReservationManager()
         {
             // read in from text files to each map
             // initialize static variables to next id
@@ -34,9 +34,9 @@ namespace Reservation_System
         public bool Save()
         {
             bool users = SaveUsers();
-            bool reservables = SaveReservables();
-            bool reservations = SaveReservations();
-            return users && reservables && reservations;
+            bool Reservables = SaveReservables();
+            bool Reservations= SaveReservations();
+            return users && Reservables && Reservations;
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Reservation_System
             else
                 return false;
 
-            reservables.Add(toAdd.id, toAdd);
+            Reservables.Add(toAdd.id, toAdd);
             return true;
         }
 
@@ -207,7 +207,7 @@ namespace Reservation_System
             else
                 return false;
 
-            reservables.Add(id, toAdd);
+            Reservables.Add(id, toAdd);
             return true;
         }
 
@@ -218,9 +218,9 @@ namespace Reservation_System
         /// <returns></returns>
         public bool RemoveReservable(int id)
         {
-            if (reservables.ContainsKey(id))
+            if (Reservables.ContainsKey(id))
             {
-                reservables.Remove(id);
+                Reservables.Remove(id);
                 return true;
             }
             return false;
@@ -234,7 +234,7 @@ namespace Reservation_System
         public Reservable GetReservable(int id)
         {
             Reservable toGet = null;
-            bool found = reservables.TryGetValue(id, out toGet);
+            bool found = Reservables.TryGetValue(id, out toGet);
             if (found)
                 return toGet;
             else
@@ -250,7 +250,7 @@ namespace Reservation_System
         /// <returns></returns>
         public bool EditReservable(int id, string type, bool reserved)
         {
-            if (reservables.ContainsKey(id))
+            if (Reservables.ContainsKey(id))
             {
                 RemoveReservable(id);
                 AddReservable(id, type, reserved);
@@ -263,7 +263,7 @@ namespace Reservation_System
         public SortedList<string, Reservable> SortByType()
         {
             SortedList<string, Reservable> types = new SortedList<string, Reservable>();
-            foreach (KeyValuePair<int, Reservable> element in reservables)
+            foreach (KeyValuePair<int, Reservable> element in Reservables)
             {
                 types.Add(element.Value.GetType(), element.Value);
             }
@@ -285,7 +285,7 @@ namespace Reservation_System
                 return false;
             Reservation toAdd = new Reservation(user, reservable,
                 date, duration);
-            reservations.Add(toAdd.id, toAdd);
+            Reservations.Add(toAdd.id, toAdd);
             return true;
         }
 
@@ -305,7 +305,7 @@ namespace Reservation_System
                 return false;
             Reservation toAdd = new Reservation(id, user, reservable,
                 date, duration);
-            reservations.Add(id, toAdd);
+            Reservations.Add(id, toAdd);
             return true;
         }
 
@@ -316,9 +316,9 @@ namespace Reservation_System
         /// <returns></returns>
         public bool RemoveReservation(int id)
         {
-            if (reservations.ContainsKey(id))
+            if (Reservations.ContainsKey(id))
             {
-                reservations.Remove(id);
+                Reservations.Remove(id);
                 return true;
             }
             return false;
@@ -332,7 +332,7 @@ namespace Reservation_System
         public Reservation GetReservation(int id)
         {
             Reservation toGet = null;
-            bool found = reservations.TryGetValue(id, out toGet);
+            bool found = Reservations.TryGetValue(id, out toGet);
             if (found)
                 return toGet;
             else
@@ -351,7 +351,7 @@ namespace Reservation_System
         public bool EditReservation(int id, int user, int reservable,
             DateTime date, double duration)
         {
-            if (reservations.ContainsKey(id))
+            if (Reservations.ContainsKey(id))
             {
                 RemoveReservation(id);
                 AddReservation(id, user, reservable, date, duration);
@@ -367,7 +367,7 @@ namespace Reservation_System
         public SortedList<int, Reservation> SortByUser()
         {
             SortedList<int, Reservation> sort = new SortedList<int, Reservation>();
-            foreach (KeyValuePair<int, Reservation> element in reservations)
+            foreach (KeyValuePair<int, Reservation> element in Reservations)
             {
                 sort.Add(element.Value.reservedBy, element.Value);
             }
@@ -381,7 +381,7 @@ namespace Reservation_System
         public SortedList<int, Reservation> SortByReservable()
         {
             SortedList<int, Reservation> sort = new SortedList<int, Reservation>();
-            foreach (KeyValuePair<int, Reservation> element in reservations)
+            foreach (KeyValuePair<int, Reservation> element in Reservations)
             {
                 sort.Add(element.Value.reservable, element.Value);
             }
@@ -395,7 +395,7 @@ namespace Reservation_System
         public SortedList<DateTime, Reservation> SortByStart()
         {
             SortedList<DateTime, Reservation> sort = new SortedList<DateTime, Reservation>();
-            foreach (KeyValuePair<int, Reservation> element in reservations)
+            foreach (KeyValuePair<int, Reservation> element in Reservations)
             {
                 sort.Add(element.Value.resStart, element.Value);
             }
@@ -409,7 +409,7 @@ namespace Reservation_System
         /// <param name="duration"></param>
         /// <returns></returns>
 
-        // TODO: use filter to get just reservations for specified reservable
+        // TODO: use filter to get just Reservationsfor specified reservable
         // TODO: check each reservation time against the specified times
 
         public bool Available(int id, DateTime start, double duration)
@@ -469,7 +469,7 @@ namespace Reservation_System
             }
             else
             {
-                foreach (KeyValuePair<string, Reservable> element in sort)
+                foreach (KeyValuePair<int, Reservable> element in Reservables)
                 {
                     available.Add(element.Value.id, element.Value);
                 }
