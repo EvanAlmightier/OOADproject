@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -512,6 +513,33 @@ namespace Reservation_System
         public void ReadReservations()
         {
 
+        }
+
+        private List<List<string>> ReadFile(string path)
+        {
+            List<List<string>> file = new List<List<string>>();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    List<string> items = new List<string>(line.Split('|'));
+                    file.Add(items);
+                    line = sr.ReadLine();
+                }
+            }
+            return file;
+        }
+
+        private void WriteFile(string path, List<string> file)
+        {
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                foreach (string line in file)
+                {
+                    sw.WriteLine(line);
+                }
+            }
         }
 
         /// <summary>
