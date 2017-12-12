@@ -30,6 +30,21 @@ namespace Reservation_System
          return false;
       }
 
+      public bool removeComputer(Computer c)
+      {
+         return computerList.Remove(c);
+      }
+
+      public int[] GetComputerIDs()
+      {
+         List<int> intList = new List<int>();
+         foreach(Computer c in computerList)
+         {
+            intList.Add(c.id);
+         }
+         return intList.ToArray();
+      }
+
       public override string GetType()
       {
          return "Room";

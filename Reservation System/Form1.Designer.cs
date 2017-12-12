@@ -28,835 +28,869 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.pnlSearch = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstboxAvailable = new System.Windows.Forms.ListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lstboxReserved = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sortBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nudDuration = new System.Windows.Forms.NumericUpDown();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.createButton = new System.Windows.Forms.Button();
-            this.pnlLogin = new System.Windows.Forms.Panel();
-            this.passwordText = new System.Windows.Forms.TextBox();
-            this.IDtext = new System.Windows.Forms.TextBox();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlManage = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.listBox6 = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.gbCreateReservable = new System.Windows.Forms.GroupBox();
-            this.cbCreateReservable = new System.Windows.Forms.ComboBox();
-            this.lstboxCreateComputerRoomList = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnCreateReservable = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.managingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtIncorrectLogin = new System.Windows.Forms.Label();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtNoRoomSelected = new System.Windows.Forms.Label();
-            this.pnlSearch.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
-            this.pnlLogin.SuspendLayout();
-            this.pnlManage.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.gbCreateReservable.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // pnlSearch
-            // 
-            this.pnlSearch.Controls.Add(this.groupBox3);
-            this.pnlSearch.Controls.Add(this.groupBox2);
-            this.pnlSearch.Controls.Add(this.label4);
-            this.pnlSearch.Controls.Add(this.sortBox);
-            this.pnlSearch.Controls.Add(this.groupBox1);
-            this.pnlSearch.Controls.Add(this.label8);
-            this.pnlSearch.Controls.Add(this.createButton);
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSearch.Location = new System.Drawing.Point(0, 24);
-            this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(988, 634);
-            this.pnlSearch.TabIndex = 6;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lstboxAvailable);
-            this.groupBox3.Location = new System.Drawing.Point(290, 167);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(611, 382);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Available";
-            // 
-            // lstboxAvailable
-            // 
-            this.lstboxAvailable.FormattingEnabled = true;
-            this.lstboxAvailable.Location = new System.Drawing.Point(14, 21);
-            this.lstboxAvailable.Name = "lstboxAvailable";
-            this.lstboxAvailable.Size = new System.Drawing.Size(586, 355);
-            this.lstboxAvailable.Sorted = true;
-            this.lstboxAvailable.TabIndex = 7;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lstboxReserved);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(19, 209);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 405);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reserved";
-            // 
-            // lstboxReserved
-            // 
-            this.lstboxReserved.FormattingEnabled = true;
-            this.lstboxReserved.ItemHeight = 16;
-            this.lstboxReserved.Location = new System.Drawing.Point(12, 27);
-            this.lstboxReserved.Name = "lstboxReserved";
-            this.lstboxReserved.Size = new System.Drawing.Size(239, 372);
-            this.lstboxReserved.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(19, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Sort By";
-            // 
-            // sortBox
-            // 
-            this.sortBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.sortBox.FormattingEnabled = true;
-            this.sortBox.Items.AddRange(new object[] {
+         this.pnlSearch = new System.Windows.Forms.Panel();
+         this.groupBox3 = new System.Windows.Forms.GroupBox();
+         this.lstboxAvailable = new System.Windows.Forms.ListBox();
+         this.groupBox2 = new System.Windows.Forms.GroupBox();
+         this.lstboxReserved = new System.Windows.Forms.ListBox();
+         this.label4 = new System.Windows.Forms.Label();
+         this.sortBox = new System.Windows.Forms.ComboBox();
+         this.groupBox1 = new System.Windows.Forms.GroupBox();
+         this.label5 = new System.Windows.Forms.Label();
+         this.label6 = new System.Windows.Forms.Label();
+         this.label7 = new System.Windows.Forms.Label();
+         this.nudDuration = new System.Windows.Forms.NumericUpDown();
+         this.searchButton = new System.Windows.Forms.Button();
+         this.dtpTime = new System.Windows.Forms.DateTimePicker();
+         this.cbType = new System.Windows.Forms.ComboBox();
+         this.label8 = new System.Windows.Forms.Label();
+         this.createButton = new System.Windows.Forms.Button();
+         this.pnlLogin = new System.Windows.Forms.Panel();
+         this.txtIncorrectLogin = new System.Windows.Forms.Label();
+         this.passwordText = new System.Windows.Forms.TextBox();
+         this.IDtext = new System.Windows.Forms.TextBox();
+         this.loginButton = new System.Windows.Forms.Button();
+         this.label3 = new System.Windows.Forms.Label();
+         this.label2 = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
+         this.pnlManage = new System.Windows.Forms.Panel();
+         this.tabControl1 = new System.Windows.Forms.TabControl();
+         this.tabPage1 = new System.Windows.Forms.TabPage();
+         this.gbEditDeleteReservable = new System.Windows.Forms.GroupBox();
+         this.btnDeleteReservable = new System.Windows.Forms.Button();
+         this.gbEditReservable = new System.Windows.Forms.GroupBox();
+         this.lstboxMoveToRoom = new System.Windows.Forms.ListBox();
+         this.btnMoveSelectedComputer = new System.Windows.Forms.Button();
+         this.lstboxEditComputersInRoom = new System.Windows.Forms.ListBox();
+         this.btnDeleteSelectedComputer = new System.Windows.Forms.Button();
+         this.cbEditReservable = new System.Windows.Forms.ComboBox();
+         this.lstboxEditReservable = new System.Windows.Forms.ListBox();
+         this.label10 = new System.Windows.Forms.Label();
+         this.gbCreateReservable = new System.Windows.Forms.GroupBox();
+         this.txtNoRoomSelected = new System.Windows.Forms.Label();
+         this.cbCreateReservable = new System.Windows.Forms.ComboBox();
+         this.lstboxCreateComputerRoomList = new System.Windows.Forms.ListBox();
+         this.label9 = new System.Windows.Forms.Label();
+         this.btnCreateReservable = new System.Windows.Forms.Button();
+         this.tabPage2 = new System.Windows.Forms.TabPage();
+         this.gbEditDeleteUser = new System.Windows.Forms.GroupBox();
+         this.gbEditUser = new System.Windows.Forms.GroupBox();
+         this.lblEditEmail = new System.Windows.Forms.Label();
+         this.lblEditName = new System.Windows.Forms.Label();
+         this.txtEditName = new System.Windows.Forms.TextBox();
+         this.txtEditEmail = new System.Windows.Forms.TextBox();
+         this.btnEditUser = new System.Windows.Forms.Button();
+         this.cbChangeUser = new System.Windows.Forms.ComboBox();
+         this.lstboxUsers = new System.Windows.Forms.ListBox();
+         this.cbEditUser = new System.Windows.Forms.ComboBox();
+         this.btnDeleteUser = new System.Windows.Forms.Button();
+         this.gbCreateUser = new System.Windows.Forms.GroupBox();
+         this.lblUserWarning = new System.Windows.Forms.Label();
+         this.cbCreateUser = new System.Windows.Forms.ComboBox();
+         this.lbluserEmail = new System.Windows.Forms.Label();
+         this.lblUserName = new System.Windows.Forms.Label();
+         this.txtUserName = new System.Windows.Forms.TextBox();
+         this.btnCreateUser = new System.Windows.Forms.Button();
+         this.txtUserEmail = new System.Windows.Forms.TextBox();
+         this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+         this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.managingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.pnlSearch.SuspendLayout();
+         this.groupBox3.SuspendLayout();
+         this.groupBox2.SuspendLayout();
+         this.groupBox1.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
+         this.pnlLogin.SuspendLayout();
+         this.pnlManage.SuspendLayout();
+         this.tabControl1.SuspendLayout();
+         this.tabPage1.SuspendLayout();
+         this.gbEditDeleteReservable.SuspendLayout();
+         this.gbEditReservable.SuspendLayout();
+         this.gbCreateReservable.SuspendLayout();
+         this.tabPage2.SuspendLayout();
+         this.gbEditDeleteUser.SuspendLayout();
+         this.gbEditUser.SuspendLayout();
+         this.gbCreateUser.SuspendLayout();
+         this.menuStrip1.SuspendLayout();
+         this.SuspendLayout();
+         // 
+         // pnlSearch
+         // 
+         this.pnlSearch.Controls.Add(this.groupBox3);
+         this.pnlSearch.Controls.Add(this.groupBox2);
+         this.pnlSearch.Controls.Add(this.label4);
+         this.pnlSearch.Controls.Add(this.sortBox);
+         this.pnlSearch.Controls.Add(this.groupBox1);
+         this.pnlSearch.Controls.Add(this.label8);
+         this.pnlSearch.Controls.Add(this.createButton);
+         this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.pnlSearch.Location = new System.Drawing.Point(0, 24);
+         this.pnlSearch.Name = "pnlSearch";
+         this.pnlSearch.Size = new System.Drawing.Size(988, 634);
+         this.pnlSearch.TabIndex = 6;
+         // 
+         // groupBox3
+         // 
+         this.groupBox3.Controls.Add(this.lstboxAvailable);
+         this.groupBox3.Location = new System.Drawing.Point(290, 167);
+         this.groupBox3.Name = "groupBox3";
+         this.groupBox3.Size = new System.Drawing.Size(611, 382);
+         this.groupBox3.TabIndex = 16;
+         this.groupBox3.TabStop = false;
+         this.groupBox3.Text = "Available";
+         // 
+         // lstboxAvailable
+         // 
+         this.lstboxAvailable.FormattingEnabled = true;
+         this.lstboxAvailable.Location = new System.Drawing.Point(14, 21);
+         this.lstboxAvailable.Name = "lstboxAvailable";
+         this.lstboxAvailable.Size = new System.Drawing.Size(586, 355);
+         this.lstboxAvailable.Sorted = true;
+         this.lstboxAvailable.TabIndex = 7;
+         // 
+         // groupBox2
+         // 
+         this.groupBox2.Controls.Add(this.lstboxReserved);
+         this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+         this.groupBox2.Location = new System.Drawing.Point(19, 209);
+         this.groupBox2.Name = "groupBox2";
+         this.groupBox2.Size = new System.Drawing.Size(265, 405);
+         this.groupBox2.TabIndex = 15;
+         this.groupBox2.TabStop = false;
+         this.groupBox2.Text = "Reserved";
+         // 
+         // lstboxReserved
+         // 
+         this.lstboxReserved.FormattingEnabled = true;
+         this.lstboxReserved.ItemHeight = 16;
+         this.lstboxReserved.Location = new System.Drawing.Point(12, 27);
+         this.lstboxReserved.Name = "lstboxReserved";
+         this.lstboxReserved.Size = new System.Drawing.Size(239, 372);
+         this.lstboxReserved.TabIndex = 6;
+         // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+         this.label4.Location = new System.Drawing.Point(19, 171);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(61, 20);
+         this.label4.TabIndex = 14;
+         this.label4.Text = "Sort By";
+         // 
+         // sortBox
+         // 
+         this.sortBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+         this.sortBox.FormattingEnabled = true;
+         this.sortBox.Items.AddRange(new object[] {
             "Time"});
-            this.sortBox.Location = new System.Drawing.Point(86, 167);
-            this.sortBox.Name = "sortBox";
-            this.sortBox.Size = new System.Drawing.Size(121, 24);
-            this.sortBox.TabIndex = 13;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.nudDuration);
-            this.groupBox1.Controls.Add(this.searchButton);
-            this.groupBox1.Controls.Add(this.dtpTime);
-            this.groupBox1.Controls.Add(this.cbType);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(19, 77);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(882, 84);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Reservation";
-            // 
-            // label5
-            // 
-            this.label5.AllowDrop = true;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Type";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(226, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Date";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(587, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Duration";
-            // 
-            // nudDuration
-            // 
-            this.nudDuration.Increment = new decimal(new int[] {
+         this.sortBox.Location = new System.Drawing.Point(86, 167);
+         this.sortBox.Name = "sortBox";
+         this.sortBox.Size = new System.Drawing.Size(121, 24);
+         this.sortBox.TabIndex = 13;
+         // 
+         // groupBox1
+         // 
+         this.groupBox1.Controls.Add(this.label5);
+         this.groupBox1.Controls.Add(this.label6);
+         this.groupBox1.Controls.Add(this.label7);
+         this.groupBox1.Controls.Add(this.nudDuration);
+         this.groupBox1.Controls.Add(this.searchButton);
+         this.groupBox1.Controls.Add(this.dtpTime);
+         this.groupBox1.Controls.Add(this.cbType);
+         this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+         this.groupBox1.Location = new System.Drawing.Point(19, 77);
+         this.groupBox1.Name = "groupBox1";
+         this.groupBox1.Size = new System.Drawing.Size(882, 84);
+         this.groupBox1.TabIndex = 12;
+         this.groupBox1.TabStop = false;
+         this.groupBox1.Text = "Reservation";
+         // 
+         // label5
+         // 
+         this.label5.AllowDrop = true;
+         this.label5.AutoSize = true;
+         this.label5.Location = new System.Drawing.Point(10, 49);
+         this.label5.Name = "label5";
+         this.label5.Size = new System.Drawing.Size(43, 20);
+         this.label5.TabIndex = 7;
+         this.label5.Text = "Type";
+         // 
+         // label6
+         // 
+         this.label6.AutoSize = true;
+         this.label6.Location = new System.Drawing.Point(226, 45);
+         this.label6.Name = "label6";
+         this.label6.Size = new System.Drawing.Size(44, 20);
+         this.label6.TabIndex = 6;
+         this.label6.Text = "Date";
+         // 
+         // label7
+         // 
+         this.label7.AutoSize = true;
+         this.label7.Location = new System.Drawing.Point(587, 45);
+         this.label7.Name = "label7";
+         this.label7.Size = new System.Drawing.Size(70, 20);
+         this.label7.TabIndex = 5;
+         this.label7.Text = "Duration";
+         // 
+         // nudDuration
+         // 
+         this.nudDuration.Increment = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.nudDuration.Location = new System.Drawing.Point(663, 43);
-            this.nudDuration.Maximum = new decimal(new int[] {
+         this.nudDuration.Location = new System.Drawing.Point(663, 43);
+         this.nudDuration.Maximum = new decimal(new int[] {
             180,
             0,
             0,
             0});
-            this.nudDuration.Name = "nudDuration";
-            this.nudDuration.Size = new System.Drawing.Size(120, 26);
-            this.nudDuration.TabIndex = 4;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(789, 25);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(82, 53);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // dtpTime
-            // 
-            this.dtpTime.AllowDrop = true;
-            this.dtpTime.CustomFormat = "dddd.MMMM.dd/yyyy HH:mm";
-            this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTime.Location = new System.Drawing.Point(276, 43);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(290, 23);
-            this.dtpTime.TabIndex = 2;
-            // 
-            // cbType
-            // 
-            this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Items.AddRange(new object[] {
+         this.nudDuration.Name = "nudDuration";
+         this.nudDuration.Size = new System.Drawing.Size(120, 26);
+         this.nudDuration.TabIndex = 4;
+         // 
+         // searchButton
+         // 
+         this.searchButton.Location = new System.Drawing.Point(789, 25);
+         this.searchButton.Name = "searchButton";
+         this.searchButton.Size = new System.Drawing.Size(82, 53);
+         this.searchButton.TabIndex = 3;
+         this.searchButton.Text = "Search";
+         this.searchButton.UseVisualStyleBackColor = true;
+         this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+         // 
+         // dtpTime
+         // 
+         this.dtpTime.AllowDrop = true;
+         this.dtpTime.CustomFormat = "dddd.MMMM.dd/yyyy HH:mm";
+         this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+         this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+         this.dtpTime.Location = new System.Drawing.Point(276, 43);
+         this.dtpTime.Name = "dtpTime";
+         this.dtpTime.Size = new System.Drawing.Size(290, 23);
+         this.dtpTime.TabIndex = 2;
+         // 
+         // cbType
+         // 
+         this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+         this.cbType.FormattingEnabled = true;
+         this.cbType.Items.AddRange(new object[] {
             "Computer",
             "Room"});
-            this.cbType.Location = new System.Drawing.Point(67, 45);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 24);
-            this.cbType.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label8.Location = new System.Drawing.Point(12, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(310, 39);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Create Reservation";
-            // 
-            // createButton
-            // 
-            this.createButton.Location = new System.Drawing.Point(744, 557);
-            this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(157, 59);
-            this.createButton.TabIndex = 11;
-            this.createButton.Text = "Create";
-            this.createButton.UseVisualStyleBackColor = true;
-            // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Controls.Add(this.txtIncorrectLogin);
-            this.pnlLogin.Controls.Add(this.passwordText);
-            this.pnlLogin.Controls.Add(this.IDtext);
-            this.pnlLogin.Controls.Add(this.loginButton);
-            this.pnlLogin.Controls.Add(this.label3);
-            this.pnlLogin.Controls.Add(this.label2);
-            this.pnlLogin.Controls.Add(this.label1);
-            this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLogin.Location = new System.Drawing.Point(0, 24);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(988, 634);
-            this.pnlLogin.TabIndex = 17;
-            // 
-            // passwordText
-            // 
-            this.passwordText.Location = new System.Drawing.Point(352, 371);
-            this.passwordText.Name = "passwordText";
-            this.passwordText.PasswordChar = '{';
-            this.passwordText.Size = new System.Drawing.Size(177, 20);
-            this.passwordText.TabIndex = 11;
-            // 
-            // IDtext
-            // 
-            this.IDtext.Location = new System.Drawing.Point(352, 328);
-            this.IDtext.Name = "IDtext";
-            this.IDtext.Size = new System.Drawing.Size(177, 20);
-            this.IDtext.TabIndex = 10;
-            this.IDtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDtext_KeyPress);
-            // 
-            // loginButton
-            // 
-            this.loginButton.Location = new System.Drawing.Point(560, 330);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(67, 56);
-            this.loginButton.TabIndex = 9;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(267, 374);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "PASSWORD";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 332);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "ID";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label1.Location = new System.Drawing.Point(391, 248);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 39);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sign In";
-            // 
-            // pnlManage
-            // 
-            this.pnlManage.Controls.Add(this.tabControl1);
-            this.pnlManage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlManage.Location = new System.Drawing.Point(0, 24);
-            this.pnlManage.Name = "pnlManage";
-            this.pnlManage.Size = new System.Drawing.Size(988, 634);
-            this.pnlManage.TabIndex = 12;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(988, 634);
-            this.tabControl1.TabIndex = 19;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.gbCreateReservable);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(980, 608);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.AutoSize = true;
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.groupBox7);
-            this.groupBox5.Controls.Add(this.comboBox4);
-            this.groupBox5.Controls.Add(this.listBox4);
-            this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Location = new System.Drawing.Point(2, 0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(515, 523);
-            this.groupBox5.TabIndex = 26;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(161, 73);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 27);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.listBox6);
-            this.groupBox7.Controls.Add(this.button5);
-            this.groupBox7.Controls.Add(this.listBox5);
-            this.groupBox7.Controls.Add(this.button4);
-            this.groupBox7.Location = new System.Drawing.Point(161, 106);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(212, 398);
-            this.groupBox7.TabIndex = 26;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
-            // 
-            // listBox6
-            // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(8, 258);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(123, 134);
-            this.listBox6.TabIndex = 26;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(8, 208);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 44);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Move Selected Computer";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(8, 25);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(120, 173);
-            this.listBox5.TabIndex = 24;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(134, 24);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(68, 49);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Delete Selected Computer";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(161, 46);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(144, 21);
-            this.comboBox4.TabIndex = 19;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(6, 19);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(149, 485);
-            this.listBox4.TabIndex = 24;
-            this.listBox4.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(158, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Edit Reservable";
-            // 
-            // gbCreateReservable
-            // 
-            this.gbCreateReservable.AutoSize = true;
-            this.gbCreateReservable.Controls.Add(this.txtNoRoomSelected);
-            this.gbCreateReservable.Controls.Add(this.cbCreateReservable);
-            this.gbCreateReservable.Controls.Add(this.lstboxCreateComputerRoomList);
-            this.gbCreateReservable.Controls.Add(this.label9);
-            this.gbCreateReservable.Controls.Add(this.btnCreateReservable);
-            this.gbCreateReservable.Location = new System.Drawing.Point(517, 0);
-            this.gbCreateReservable.Name = "gbCreateReservable";
-            this.gbCreateReservable.Size = new System.Drawing.Size(460, 529);
-            this.gbCreateReservable.TabIndex = 25;
-            this.gbCreateReservable.TabStop = false;
-            this.gbCreateReservable.Text = "Create Reservable";
-            // 
-            // cbCreateReservable
-            // 
-            this.cbCreateReservable.FormattingEnabled = true;
-            this.cbCreateReservable.Items.AddRange(new object[] {
+         this.cbType.Location = new System.Drawing.Point(67, 45);
+         this.cbType.Name = "cbType";
+         this.cbType.Size = new System.Drawing.Size(121, 24);
+         this.cbType.TabIndex = 1;
+         // 
+         // label8
+         // 
+         this.label8.AutoSize = true;
+         this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+         this.label8.Location = new System.Drawing.Point(12, 24);
+         this.label8.Name = "label8";
+         this.label8.Size = new System.Drawing.Size(310, 39);
+         this.label8.TabIndex = 10;
+         this.label8.Text = "Create Reservation";
+         // 
+         // createButton
+         // 
+         this.createButton.Location = new System.Drawing.Point(744, 557);
+         this.createButton.Name = "createButton";
+         this.createButton.Size = new System.Drawing.Size(157, 59);
+         this.createButton.TabIndex = 11;
+         this.createButton.Text = "Create";
+         this.createButton.UseVisualStyleBackColor = true;
+         // 
+         // pnlLogin
+         // 
+         this.pnlLogin.Controls.Add(this.txtIncorrectLogin);
+         this.pnlLogin.Controls.Add(this.passwordText);
+         this.pnlLogin.Controls.Add(this.IDtext);
+         this.pnlLogin.Controls.Add(this.loginButton);
+         this.pnlLogin.Controls.Add(this.label3);
+         this.pnlLogin.Controls.Add(this.label2);
+         this.pnlLogin.Controls.Add(this.label1);
+         this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.pnlLogin.Location = new System.Drawing.Point(0, 24);
+         this.pnlLogin.Name = "pnlLogin";
+         this.pnlLogin.Size = new System.Drawing.Size(988, 634);
+         this.pnlLogin.TabIndex = 17;
+         // 
+         // txtIncorrectLogin
+         // 
+         this.txtIncorrectLogin.AutoSize = true;
+         this.txtIncorrectLogin.ForeColor = System.Drawing.Color.Maroon;
+         this.txtIncorrectLogin.Location = new System.Drawing.Point(349, 394);
+         this.txtIncorrectLogin.Name = "txtIncorrectLogin";
+         this.txtIncorrectLogin.Size = new System.Drawing.Size(148, 13);
+         this.txtIncorrectLogin.TabIndex = 12;
+         this.txtIncorrectLogin.Text = "ID or Password was incorrect.";
+         this.txtIncorrectLogin.Visible = false;
+         // 
+         // passwordText
+         // 
+         this.passwordText.Location = new System.Drawing.Point(352, 371);
+         this.passwordText.Name = "passwordText";
+         this.passwordText.PasswordChar = '{';
+         this.passwordText.Size = new System.Drawing.Size(177, 20);
+         this.passwordText.TabIndex = 11;
+         // 
+         // IDtext
+         // 
+         this.IDtext.Location = new System.Drawing.Point(352, 328);
+         this.IDtext.Name = "IDtext";
+         this.IDtext.Size = new System.Drawing.Size(177, 20);
+         this.IDtext.TabIndex = 10;
+         this.IDtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDtext_KeyPress);
+         // 
+         // loginButton
+         // 
+         this.loginButton.Location = new System.Drawing.Point(560, 330);
+         this.loginButton.Name = "loginButton";
+         this.loginButton.Size = new System.Drawing.Size(67, 56);
+         this.loginButton.TabIndex = 9;
+         this.loginButton.Text = "Login";
+         this.loginButton.UseVisualStyleBackColor = true;
+         this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+         // 
+         // label3
+         // 
+         this.label3.AutoSize = true;
+         this.label3.Location = new System.Drawing.Point(267, 374);
+         this.label3.Name = "label3";
+         this.label3.Size = new System.Drawing.Size(70, 13);
+         this.label3.TabIndex = 8;
+         this.label3.Text = "PASSWORD";
+         // 
+         // label2
+         // 
+         this.label2.AutoSize = true;
+         this.label2.Location = new System.Drawing.Point(319, 332);
+         this.label2.Name = "label2";
+         this.label2.Size = new System.Drawing.Size(18, 13);
+         this.label2.TabIndex = 7;
+         this.label2.Text = "ID";
+         // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+         this.label1.Location = new System.Drawing.Point(391, 248);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(124, 39);
+         this.label1.TabIndex = 6;
+         this.label1.Text = "Sign In";
+         // 
+         // pnlManage
+         // 
+         this.pnlManage.Controls.Add(this.tabControl1);
+         this.pnlManage.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.pnlManage.Location = new System.Drawing.Point(0, 24);
+         this.pnlManage.Name = "pnlManage";
+         this.pnlManage.Size = new System.Drawing.Size(988, 634);
+         this.pnlManage.TabIndex = 12;
+         // 
+         // tabControl1
+         // 
+         this.tabControl1.Controls.Add(this.tabPage1);
+         this.tabControl1.Controls.Add(this.tabPage2);
+         this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.tabControl1.Location = new System.Drawing.Point(0, 0);
+         this.tabControl1.Name = "tabControl1";
+         this.tabControl1.SelectedIndex = 0;
+         this.tabControl1.Size = new System.Drawing.Size(988, 634);
+         this.tabControl1.TabIndex = 19;
+         // 
+         // tabPage1
+         // 
+         this.tabPage1.Controls.Add(this.gbEditDeleteReservable);
+         this.tabPage1.Controls.Add(this.gbCreateReservable);
+         this.tabPage1.Location = new System.Drawing.Point(4, 22);
+         this.tabPage1.Name = "tabPage1";
+         this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+         this.tabPage1.Size = new System.Drawing.Size(980, 608);
+         this.tabPage1.TabIndex = 0;
+         this.tabPage1.Text = "tabPage1";
+         this.tabPage1.UseVisualStyleBackColor = true;
+         // 
+         // gbEditDeleteReservable
+         // 
+         this.gbEditDeleteReservable.AutoSize = true;
+         this.gbEditDeleteReservable.Controls.Add(this.btnDeleteReservable);
+         this.gbEditDeleteReservable.Controls.Add(this.gbEditReservable);
+         this.gbEditDeleteReservable.Controls.Add(this.cbEditReservable);
+         this.gbEditDeleteReservable.Controls.Add(this.lstboxEditReservable);
+         this.gbEditDeleteReservable.Controls.Add(this.label10);
+         this.gbEditDeleteReservable.Location = new System.Drawing.Point(2, 0);
+         this.gbEditDeleteReservable.Name = "gbEditDeleteReservable";
+         this.gbEditDeleteReservable.Size = new System.Drawing.Size(515, 523);
+         this.gbEditDeleteReservable.TabIndex = 26;
+         this.gbEditDeleteReservable.TabStop = false;
+         this.gbEditDeleteReservable.Text = "Delete/Edit";
+         // 
+         // btnDeleteReservable
+         // 
+         this.btnDeleteReservable.Location = new System.Drawing.Point(161, 73);
+         this.btnDeleteReservable.Name = "btnDeleteReservable";
+         this.btnDeleteReservable.Size = new System.Drawing.Size(144, 27);
+         this.btnDeleteReservable.TabIndex = 23;
+         this.btnDeleteReservable.Text = "Delete";
+         this.btnDeleteReservable.UseVisualStyleBackColor = true;
+         this.btnDeleteReservable.Click += new System.EventHandler(this.btnDeleteReservable_Click);
+         // 
+         // gbEditReservable
+         // 
+         this.gbEditReservable.Controls.Add(this.lstboxMoveToRoom);
+         this.gbEditReservable.Controls.Add(this.btnMoveSelectedComputer);
+         this.gbEditReservable.Controls.Add(this.lstboxEditComputersInRoom);
+         this.gbEditReservable.Controls.Add(this.btnDeleteSelectedComputer);
+         this.gbEditReservable.Location = new System.Drawing.Point(161, 106);
+         this.gbEditReservable.Name = "gbEditReservable";
+         this.gbEditReservable.Size = new System.Drawing.Size(212, 398);
+         this.gbEditReservable.TabIndex = 26;
+         this.gbEditReservable.TabStop = false;
+         this.gbEditReservable.Text = "Edit Reservable";
+         // 
+         // lstboxMoveToRoom
+         // 
+         this.lstboxMoveToRoom.FormattingEnabled = true;
+         this.lstboxMoveToRoom.Location = new System.Drawing.Point(8, 258);
+         this.lstboxMoveToRoom.Name = "lstboxMoveToRoom";
+         this.lstboxMoveToRoom.Size = new System.Drawing.Size(123, 134);
+         this.lstboxMoveToRoom.TabIndex = 26;
+         // 
+         // btnMoveSelectedComputer
+         // 
+         this.btnMoveSelectedComputer.Location = new System.Drawing.Point(8, 208);
+         this.btnMoveSelectedComputer.Name = "btnMoveSelectedComputer";
+         this.btnMoveSelectedComputer.Size = new System.Drawing.Size(120, 44);
+         this.btnMoveSelectedComputer.TabIndex = 25;
+         this.btnMoveSelectedComputer.Text = "Move Selected Computer";
+         this.btnMoveSelectedComputer.UseVisualStyleBackColor = true;
+         this.btnMoveSelectedComputer.Click += new System.EventHandler(this.btnMoveSelectedComputer_Click);
+         // 
+         // lstboxEditComputersInRoom
+         // 
+         this.lstboxEditComputersInRoom.FormattingEnabled = true;
+         this.lstboxEditComputersInRoom.Location = new System.Drawing.Point(8, 25);
+         this.lstboxEditComputersInRoom.Name = "lstboxEditComputersInRoom";
+         this.lstboxEditComputersInRoom.Size = new System.Drawing.Size(120, 173);
+         this.lstboxEditComputersInRoom.TabIndex = 24;
+         // 
+         // btnDeleteSelectedComputer
+         // 
+         this.btnDeleteSelectedComputer.Location = new System.Drawing.Point(134, 24);
+         this.btnDeleteSelectedComputer.Name = "btnDeleteSelectedComputer";
+         this.btnDeleteSelectedComputer.Size = new System.Drawing.Size(68, 49);
+         this.btnDeleteSelectedComputer.TabIndex = 23;
+         this.btnDeleteSelectedComputer.Text = "Delete Selected Computer";
+         this.btnDeleteSelectedComputer.UseVisualStyleBackColor = true;
+         this.btnDeleteSelectedComputer.Click += new System.EventHandler(this.btnDeleteSelectedComputer_Click);
+         // 
+         // cbEditReservable
+         // 
+         this.cbEditReservable.FormattingEnabled = true;
+         this.cbEditReservable.Items.AddRange(new object[] {
             "Computer",
             "Room"});
-            this.cbCreateReservable.Location = new System.Drawing.Point(161, 46);
-            this.cbCreateReservable.Name = "cbCreateReservable";
-            this.cbCreateReservable.Size = new System.Drawing.Size(144, 21);
-            this.cbCreateReservable.TabIndex = 19;
-            this.cbCreateReservable.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
-            // 
-            // lstboxCreateComputerRoomList
-            // 
-            this.lstboxCreateComputerRoomList.FormattingEnabled = true;
-            this.lstboxCreateComputerRoomList.Location = new System.Drawing.Point(6, 19);
-            this.lstboxCreateComputerRoomList.Name = "lstboxCreateComputerRoomList";
-            this.lstboxCreateComputerRoomList.Size = new System.Drawing.Size(149, 485);
-            this.lstboxCreateComputerRoomList.TabIndex = 24;
-            this.lstboxCreateComputerRoomList.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(158, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Create Reservable";
-            // 
-            // btnCreateReservable
-            // 
-            this.btnCreateReservable.Location = new System.Drawing.Point(161, 78);
-            this.btnCreateReservable.Name = "btnCreateReservable";
-            this.btnCreateReservable.Size = new System.Drawing.Size(68, 49);
-            this.btnCreateReservable.TabIndex = 23;
-            this.btnCreateReservable.Text = "Create";
-            this.btnCreateReservable.UseVisualStyleBackColor = true;
-            this.btnCreateReservable.Click += new System.EventHandler(this.btnCreateReservable_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox8);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(980, 608);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.AutoSize = true;
-            this.groupBox8.Controls.Add(this.groupBox9);
-            this.groupBox8.Controls.Add(this.listBox7);
-            this.groupBox8.Controls.Add(this.comboBox5);
-            this.groupBox8.Controls.Add(this.button6);
-            this.groupBox8.Location = new System.Drawing.Point(3, 3);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(523, 583);
-            this.groupBox8.TabIndex = 36;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.label11);
-            this.groupBox9.Controls.Add(this.label12);
-            this.groupBox9.Controls.Add(this.textBox1);
-            this.groupBox9.Controls.Add(this.textBox2);
-            this.groupBox9.Controls.Add(this.button7);
-            this.groupBox9.Controls.Add(this.comboBox6);
-            this.groupBox9.Location = new System.Drawing.Point(151, 72);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(179, 161);
-            this.groupBox9.TabIndex = 36;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "groupBox9";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 89);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 63);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(55, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
-            this.textBox1.TabIndex = 35;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(55, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 20);
-            this.textBox2.TabIndex = 36;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(6, 128);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(157, 23);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Edit";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(7, 23);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(157, 21);
-            this.comboBox6.TabIndex = 0;
-            // 
-            // listBox7
-            // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.Location = new System.Drawing.Point(3, 16);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(142, 485);
-            this.listBox7.TabIndex = 35;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(151, 16);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(164, 21);
-            this.comboBox5.TabIndex = 28;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(151, 43);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(164, 23);
-            this.button6.TabIndex = 32;
-            this.button6.Text = "Delete";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.CausesValidation = false;
-            this.groupBox6.Controls.Add(this.comboBox3);
-            this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Location = new System.Drawing.Point(523, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(446, 602);
-            this.groupBox6.TabIndex = 35;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "groupBox6";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(160, 136);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(144, 21);
-            this.comboBox3.TabIndex = 28;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(157, 189);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "label14";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(157, 163);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 13);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Name";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Location = new System.Drawing.Point(204, 163);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 29;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(160, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Location = new System.Drawing.Point(204, 189);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 30;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+         this.cbEditReservable.Location = new System.Drawing.Point(161, 46);
+         this.cbEditReservable.Name = "cbEditReservable";
+         this.cbEditReservable.Size = new System.Drawing.Size(144, 21);
+         this.cbEditReservable.TabIndex = 19;
+         this.cbEditReservable.SelectedValueChanged += new System.EventHandler(this.cbEditReservable_SelectedValueChanged);
+         // 
+         // lstboxEditReservable
+         // 
+         this.lstboxEditReservable.FormattingEnabled = true;
+         this.lstboxEditReservable.Location = new System.Drawing.Point(6, 19);
+         this.lstboxEditReservable.Name = "lstboxEditReservable";
+         this.lstboxEditReservable.Size = new System.Drawing.Size(149, 485);
+         this.lstboxEditReservable.TabIndex = 24;
+         this.lstboxEditReservable.SelectedIndexChanged += new System.EventHandler(this.lstboxEditReservable_SelectedIndexChanged);
+         // 
+         // label10
+         // 
+         this.label10.AutoSize = true;
+         this.label10.Location = new System.Drawing.Point(158, 19);
+         this.label10.Name = "label10";
+         this.label10.Size = new System.Drawing.Size(82, 13);
+         this.label10.TabIndex = 18;
+         this.label10.Text = "Edit Reservable";
+         // 
+         // gbCreateReservable
+         // 
+         this.gbCreateReservable.AutoSize = true;
+         this.gbCreateReservable.Controls.Add(this.txtNoRoomSelected);
+         this.gbCreateReservable.Controls.Add(this.cbCreateReservable);
+         this.gbCreateReservable.Controls.Add(this.lstboxCreateComputerRoomList);
+         this.gbCreateReservable.Controls.Add(this.label9);
+         this.gbCreateReservable.Controls.Add(this.btnCreateReservable);
+         this.gbCreateReservable.Location = new System.Drawing.Point(517, 0);
+         this.gbCreateReservable.Name = "gbCreateReservable";
+         this.gbCreateReservable.Size = new System.Drawing.Size(460, 529);
+         this.gbCreateReservable.TabIndex = 25;
+         this.gbCreateReservable.TabStop = false;
+         this.gbCreateReservable.Text = "Create Reservable";
+         // 
+         // txtNoRoomSelected
+         // 
+         this.txtNoRoomSelected.AutoSize = true;
+         this.txtNoRoomSelected.ForeColor = System.Drawing.Color.DarkRed;
+         this.txtNoRoomSelected.Location = new System.Drawing.Point(162, 131);
+         this.txtNoRoomSelected.Name = "txtNoRoomSelected";
+         this.txtNoRoomSelected.Size = new System.Drawing.Size(218, 13);
+         this.txtNoRoomSelected.TabIndex = 25;
+         this.txtNoRoomSelected.Text = "Please select a room to add the computer to.";
+         this.txtNoRoomSelected.Visible = false;
+         // 
+         // cbCreateReservable
+         // 
+         this.cbCreateReservable.FormattingEnabled = true;
+         this.cbCreateReservable.Items.AddRange(new object[] {
+            "Computer",
+            "Room"});
+         this.cbCreateReservable.Location = new System.Drawing.Point(161, 46);
+         this.cbCreateReservable.Name = "cbCreateReservable";
+         this.cbCreateReservable.Size = new System.Drawing.Size(144, 21);
+         this.cbCreateReservable.TabIndex = 19;
+         this.cbCreateReservable.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
+         // 
+         // lstboxCreateComputerRoomList
+         // 
+         this.lstboxCreateComputerRoomList.FormattingEnabled = true;
+         this.lstboxCreateComputerRoomList.Location = new System.Drawing.Point(6, 19);
+         this.lstboxCreateComputerRoomList.Name = "lstboxCreateComputerRoomList";
+         this.lstboxCreateComputerRoomList.Size = new System.Drawing.Size(149, 485);
+         this.lstboxCreateComputerRoomList.TabIndex = 24;
+         this.lstboxCreateComputerRoomList.Visible = false;
+         // 
+         // label9
+         // 
+         this.label9.AutoSize = true;
+         this.label9.Location = new System.Drawing.Point(158, 19);
+         this.label9.Name = "label9";
+         this.label9.Size = new System.Drawing.Size(95, 13);
+         this.label9.TabIndex = 18;
+         this.label9.Text = "Create Reservable";
+         // 
+         // btnCreateReservable
+         // 
+         this.btnCreateReservable.Location = new System.Drawing.Point(161, 78);
+         this.btnCreateReservable.Name = "btnCreateReservable";
+         this.btnCreateReservable.Size = new System.Drawing.Size(68, 49);
+         this.btnCreateReservable.TabIndex = 23;
+         this.btnCreateReservable.Text = "Create";
+         this.btnCreateReservable.UseVisualStyleBackColor = true;
+         this.btnCreateReservable.Click += new System.EventHandler(this.btnCreateReservable_Click);
+         // 
+         // tabPage2
+         // 
+         this.tabPage2.Controls.Add(this.gbEditDeleteUser);
+         this.tabPage2.Controls.Add(this.gbCreateUser);
+         this.tabPage2.Location = new System.Drawing.Point(4, 22);
+         this.tabPage2.Name = "tabPage2";
+         this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+         this.tabPage2.Size = new System.Drawing.Size(980, 608);
+         this.tabPage2.TabIndex = 1;
+         this.tabPage2.Text = "tabPage2";
+         this.tabPage2.UseVisualStyleBackColor = true;
+         // 
+         // gbEditDeleteUser
+         // 
+         this.gbEditDeleteUser.AutoSize = true;
+         this.gbEditDeleteUser.Controls.Add(this.gbEditUser);
+         this.gbEditDeleteUser.Controls.Add(this.lstboxUsers);
+         this.gbEditDeleteUser.Controls.Add(this.cbEditUser);
+         this.gbEditDeleteUser.Controls.Add(this.btnDeleteUser);
+         this.gbEditDeleteUser.Location = new System.Drawing.Point(3, 3);
+         this.gbEditDeleteUser.Name = "gbEditDeleteUser";
+         this.gbEditDeleteUser.Size = new System.Drawing.Size(523, 583);
+         this.gbEditDeleteUser.TabIndex = 36;
+         this.gbEditDeleteUser.TabStop = false;
+         this.gbEditDeleteUser.Text = "Edit/Delete User";
+         // 
+         // gbEditUser
+         // 
+         this.gbEditUser.Controls.Add(this.lblEditEmail);
+         this.gbEditUser.Controls.Add(this.lblEditName);
+         this.gbEditUser.Controls.Add(this.txtEditName);
+         this.gbEditUser.Controls.Add(this.txtEditEmail);
+         this.gbEditUser.Controls.Add(this.btnEditUser);
+         this.gbEditUser.Controls.Add(this.cbChangeUser);
+         this.gbEditUser.Location = new System.Drawing.Point(151, 72);
+         this.gbEditUser.Name = "gbEditUser";
+         this.gbEditUser.Size = new System.Drawing.Size(179, 161);
+         this.gbEditUser.TabIndex = 36;
+         this.gbEditUser.TabStop = false;
+         this.gbEditUser.Text = "Edit User";
+         // 
+         // lblEditEmail
+         // 
+         this.lblEditEmail.AutoSize = true;
+         this.lblEditEmail.Location = new System.Drawing.Point(8, 89);
+         this.lblEditEmail.Name = "lblEditEmail";
+         this.lblEditEmail.Size = new System.Drawing.Size(35, 13);
+         this.lblEditEmail.TabIndex = 38;
+         this.lblEditEmail.Text = "Email:";
+         // 
+         // lblEditName
+         // 
+         this.lblEditName.AutoSize = true;
+         this.lblEditName.Location = new System.Drawing.Point(8, 63);
+         this.lblEditName.Name = "lblEditName";
+         this.lblEditName.Size = new System.Drawing.Size(38, 13);
+         this.lblEditName.TabIndex = 37;
+         this.lblEditName.Text = "Name:";
+         // 
+         // txtEditName
+         // 
+         this.txtEditName.Location = new System.Drawing.Point(55, 63);
+         this.txtEditName.Name = "txtEditName";
+         this.txtEditName.Size = new System.Drawing.Size(108, 20);
+         this.txtEditName.TabIndex = 35;
+         // 
+         // txtEditEmail
+         // 
+         this.txtEditEmail.Location = new System.Drawing.Point(55, 89);
+         this.txtEditEmail.Name = "txtEditEmail";
+         this.txtEditEmail.Size = new System.Drawing.Size(108, 20);
+         this.txtEditEmail.TabIndex = 36;
+         // 
+         // btnEditUser
+         // 
+         this.btnEditUser.Location = new System.Drawing.Point(6, 128);
+         this.btnEditUser.Name = "btnEditUser";
+         this.btnEditUser.Size = new System.Drawing.Size(157, 23);
+         this.btnEditUser.TabIndex = 1;
+         this.btnEditUser.Text = "Edit";
+         this.btnEditUser.UseVisualStyleBackColor = true;
+         this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
+         // 
+         // cbChangeUser
+         // 
+         this.cbChangeUser.FormattingEnabled = true;
+         this.cbChangeUser.Items.AddRange(new object[] {
+            "Student",
+            "Instructor",
+            "Administrator"});
+         this.cbChangeUser.Location = new System.Drawing.Point(7, 23);
+         this.cbChangeUser.Name = "cbChangeUser";
+         this.cbChangeUser.Size = new System.Drawing.Size(157, 21);
+         this.cbChangeUser.TabIndex = 0;
+         // 
+         // lstboxUsers
+         // 
+         this.lstboxUsers.FormattingEnabled = true;
+         this.lstboxUsers.Location = new System.Drawing.Point(3, 16);
+         this.lstboxUsers.Name = "lstboxUsers";
+         this.lstboxUsers.Size = new System.Drawing.Size(142, 485);
+         this.lstboxUsers.TabIndex = 35;
+         this.lstboxUsers.SelectedIndexChanged += new System.EventHandler(this.lstboxUsers_SelectedIndexChanged);
+         // 
+         // cbEditUser
+         // 
+         this.cbEditUser.FormattingEnabled = true;
+         this.cbEditUser.Items.AddRange(new object[] {
+            "Student",
+            "Instructor",
+            "Administrator"});
+         this.cbEditUser.Location = new System.Drawing.Point(151, 16);
+         this.cbEditUser.Name = "cbEditUser";
+         this.cbEditUser.Size = new System.Drawing.Size(164, 21);
+         this.cbEditUser.TabIndex = 28;
+         this.cbEditUser.SelectedIndexChanged += new System.EventHandler(this.cbEditUser_SelectedIndexChanged);
+         // 
+         // btnDeleteUser
+         // 
+         this.btnDeleteUser.Location = new System.Drawing.Point(151, 43);
+         this.btnDeleteUser.Name = "btnDeleteUser";
+         this.btnDeleteUser.Size = new System.Drawing.Size(164, 23);
+         this.btnDeleteUser.TabIndex = 32;
+         this.btnDeleteUser.Text = "Delete";
+         this.btnDeleteUser.UseVisualStyleBackColor = true;
+         // 
+         // gbCreateUser
+         // 
+         this.gbCreateUser.CausesValidation = false;
+         this.gbCreateUser.Controls.Add(this.lblUserWarning);
+         this.gbCreateUser.Controls.Add(this.cbCreateUser);
+         this.gbCreateUser.Controls.Add(this.lbluserEmail);
+         this.gbCreateUser.Controls.Add(this.lblUserName);
+         this.gbCreateUser.Controls.Add(this.txtUserName);
+         this.gbCreateUser.Controls.Add(this.btnCreateUser);
+         this.gbCreateUser.Controls.Add(this.txtUserEmail);
+         this.gbCreateUser.Location = new System.Drawing.Point(523, 3);
+         this.gbCreateUser.Name = "gbCreateUser";
+         this.gbCreateUser.Size = new System.Drawing.Size(446, 602);
+         this.gbCreateUser.TabIndex = 35;
+         this.gbCreateUser.TabStop = false;
+         this.gbCreateUser.Text = "Create User";
+         // 
+         // lblUserWarning
+         // 
+         this.lblUserWarning.AutoSize = true;
+         this.lblUserWarning.Location = new System.Drawing.Point(160, 248);
+         this.lblUserWarning.Name = "lblUserWarning";
+         this.lblUserWarning.Size = new System.Drawing.Size(76, 13);
+         this.lblUserWarning.TabIndex = 35;
+         this.lblUserWarning.Text = "Warning Label";
+         // 
+         // cbCreateUser
+         // 
+         this.cbCreateUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.cbCreateUser.FormattingEnabled = true;
+         this.cbCreateUser.Items.AddRange(new object[] {
+            "Student",
+            "Instructor",
+            "Administrator"});
+         this.cbCreateUser.Location = new System.Drawing.Point(160, 136);
+         this.cbCreateUser.Name = "cbCreateUser";
+         this.cbCreateUser.Size = new System.Drawing.Size(144, 21);
+         this.cbCreateUser.TabIndex = 28;
+         // 
+         // lbluserEmail
+         // 
+         this.lbluserEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.lbluserEmail.AutoSize = true;
+         this.lbluserEmail.Location = new System.Drawing.Point(157, 189);
+         this.lbluserEmail.Name = "lbluserEmail";
+         this.lbluserEmail.Size = new System.Drawing.Size(35, 13);
+         this.lbluserEmail.TabIndex = 34;
+         this.lbluserEmail.Text = "Email:";
+         // 
+         // lblUserName
+         // 
+         this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.lblUserName.AutoSize = true;
+         this.lblUserName.Location = new System.Drawing.Point(157, 163);
+         this.lblUserName.Name = "lblUserName";
+         this.lblUserName.Size = new System.Drawing.Size(38, 13);
+         this.lblUserName.TabIndex = 33;
+         this.lblUserName.Text = "Name:";
+         // 
+         // txtUserName
+         // 
+         this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.txtUserName.Location = new System.Drawing.Point(204, 163);
+         this.txtUserName.Name = "txtUserName";
+         this.txtUserName.Size = new System.Drawing.Size(100, 20);
+         this.txtUserName.TabIndex = 29;
+         // 
+         // btnCreateUser
+         // 
+         this.btnCreateUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.btnCreateUser.Location = new System.Drawing.Point(160, 215);
+         this.btnCreateUser.Name = "btnCreateUser";
+         this.btnCreateUser.Size = new System.Drawing.Size(144, 23);
+         this.btnCreateUser.TabIndex = 32;
+         this.btnCreateUser.Text = "Create";
+         this.btnCreateUser.UseVisualStyleBackColor = true;
+         this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
+         // 
+         // txtUserEmail
+         // 
+         this.txtUserEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.txtUserEmail.Location = new System.Drawing.Point(204, 189);
+         this.txtUserEmail.Name = "txtUserEmail";
+         this.txtUserEmail.Size = new System.Drawing.Size(100, 20);
+         this.txtUserEmail.TabIndex = 30;
+         // 
+         // menuStrip1
+         // 
+         this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.administratorToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(988, 24);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+         this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+         this.menuStrip1.Name = "menuStrip1";
+         this.menuStrip1.Size = new System.Drawing.Size(988, 24);
+         this.menuStrip1.TabIndex = 18;
+         this.menuStrip1.Text = "menuStrip1";
+         // 
+         // fileToolStripMenuItem
+         // 
+         this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // administratorToolStripMenuItem
-            // 
-            this.administratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+         this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+         this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+         this.fileToolStripMenuItem.Text = "File";
+         // 
+         // exitToolStripMenuItem
+         // 
+         this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+         this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+         this.exitToolStripMenuItem.Text = "Exit";
+         this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+         // 
+         // administratorToolStripMenuItem
+         // 
+         this.administratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.managingToolStripMenuItem,
             this.searchToolStripMenuItem});
-            this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
-            this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.administratorToolStripMenuItem.Text = "Administrator";
-            this.administratorToolStripMenuItem.Visible = false;
-            // 
-            // managingToolStripMenuItem
-            // 
-            this.managingToolStripMenuItem.Name = "managingToolStripMenuItem";
-            this.managingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.managingToolStripMenuItem.Text = "Managing";
-            this.managingToolStripMenuItem.Click += new System.EventHandler(this.managingToolStripMenuItem_Click);
-            // 
-            // txtIncorrectLogin
-            // 
-            this.txtIncorrectLogin.AutoSize = true;
-            this.txtIncorrectLogin.ForeColor = System.Drawing.Color.Maroon;
-            this.txtIncorrectLogin.Location = new System.Drawing.Point(349, 394);
-            this.txtIncorrectLogin.Name = "txtIncorrectLogin";
-            this.txtIncorrectLogin.Size = new System.Drawing.Size(148, 13);
-            this.txtIncorrectLogin.TabIndex = 12;
-            this.txtIncorrectLogin.Text = "ID or Password was incorrect.";
-            this.txtIncorrectLogin.Visible = false;
-            // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.searchToolStripMenuItem.Text = "Search";
-            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
-            // 
-            // txtNoRoomSelected
-            // 
-            this.txtNoRoomSelected.AutoSize = true;
-            this.txtNoRoomSelected.ForeColor = System.Drawing.Color.DarkRed;
-            this.txtNoRoomSelected.Location = new System.Drawing.Point(162, 131);
-            this.txtNoRoomSelected.Name = "txtNoRoomSelected";
-            this.txtNoRoomSelected.Size = new System.Drawing.Size(218, 13);
-            this.txtNoRoomSelected.TabIndex = 25;
-            this.txtNoRoomSelected.Text = "Please select a room to add the computer to.";
-            this.txtNoRoomSelected.Visible = false;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 658);
-            this.Controls.Add(this.pnlManage);
-            this.Controls.Add(this.pnlSearch);
-            this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.pnlSearch.ResumeLayout(false);
-            this.pnlSearch.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
-            this.pnlManage.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.gbCreateReservable.ResumeLayout(false);
-            this.gbCreateReservable.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+         this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
+         this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+         this.administratorToolStripMenuItem.Text = "Administrator";
+         this.administratorToolStripMenuItem.Visible = false;
+         // 
+         // managingToolStripMenuItem
+         // 
+         this.managingToolStripMenuItem.Name = "managingToolStripMenuItem";
+         this.managingToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+         this.managingToolStripMenuItem.Text = "Managing";
+         this.managingToolStripMenuItem.Click += new System.EventHandler(this.managingToolStripMenuItem_Click);
+         // 
+         // searchToolStripMenuItem
+         // 
+         this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+         this.searchToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+         this.searchToolStripMenuItem.Text = "Search";
+         this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+         // 
+         // Form1
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.ClientSize = new System.Drawing.Size(988, 658);
+         this.Controls.Add(this.pnlLogin);
+         this.Controls.Add(this.pnlSearch);
+         this.Controls.Add(this.pnlManage);
+         this.Controls.Add(this.menuStrip1);
+         this.MainMenuStrip = this.menuStrip1;
+         this.Name = "Form1";
+         this.Text = "Form1";
+         this.pnlSearch.ResumeLayout(false);
+         this.pnlSearch.PerformLayout();
+         this.groupBox3.ResumeLayout(false);
+         this.groupBox2.ResumeLayout(false);
+         this.groupBox1.ResumeLayout(false);
+         this.groupBox1.PerformLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
+         this.pnlLogin.ResumeLayout(false);
+         this.pnlLogin.PerformLayout();
+         this.pnlManage.ResumeLayout(false);
+         this.tabControl1.ResumeLayout(false);
+         this.tabPage1.ResumeLayout(false);
+         this.tabPage1.PerformLayout();
+         this.gbEditDeleteReservable.ResumeLayout(false);
+         this.gbEditDeleteReservable.PerformLayout();
+         this.gbEditReservable.ResumeLayout(false);
+         this.gbCreateReservable.ResumeLayout(false);
+         this.gbCreateReservable.PerformLayout();
+         this.tabPage2.ResumeLayout(false);
+         this.tabPage2.PerformLayout();
+         this.gbEditDeleteUser.ResumeLayout(false);
+         this.gbEditUser.ResumeLayout(false);
+         this.gbEditUser.PerformLayout();
+         this.gbCreateUser.ResumeLayout(false);
+         this.gbCreateUser.PerformLayout();
+         this.menuStrip1.ResumeLayout(false);
+         this.menuStrip1.PerformLayout();
+         this.ResumeLayout(false);
+         this.PerformLayout();
 
       }
 
@@ -896,40 +930,41 @@
         private System.Windows.Forms.Button btnCreateReservable;
         private System.Windows.Forms.ComboBox cbCreateReservable;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ListBox listBox6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Label lbluserEmail;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Button btnCreateUser;
+        private System.Windows.Forms.TextBox txtUserEmail;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.ComboBox cbCreateUser;
+        private System.Windows.Forms.GroupBox gbEditDeleteReservable;
+        private System.Windows.Forms.Button btnDeleteReservable;
+        private System.Windows.Forms.GroupBox gbEditReservable;
+        private System.Windows.Forms.ListBox lstboxMoveToRoom;
+        private System.Windows.Forms.Button btnMoveSelectedComputer;
+        private System.Windows.Forms.ListBox lstboxEditComputersInRoom;
+        private System.Windows.Forms.Button btnDeleteSelectedComputer;
+        private System.Windows.Forms.ComboBox cbEditReservable;
+        private System.Windows.Forms.ListBox lstboxEditReservable;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox gbCreateReservable;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ListBox listBox7;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gbEditDeleteUser;
+        private System.Windows.Forms.GroupBox gbEditUser;
+        private System.Windows.Forms.Label lblEditEmail;
+        private System.Windows.Forms.Label lblEditName;
+        private System.Windows.Forms.TextBox txtEditName;
+        private System.Windows.Forms.TextBox txtEditEmail;
+        private System.Windows.Forms.Button btnEditUser;
+        private System.Windows.Forms.ComboBox cbChangeUser;
+        private System.Windows.Forms.ListBox lstboxUsers;
+        private System.Windows.Forms.ComboBox cbEditUser;
+        private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.GroupBox gbCreateUser;
         private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managingToolStripMenuItem;
         private System.Windows.Forms.Label txtIncorrectLogin;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.Label txtNoRoomSelected;
-    }
+      private System.Windows.Forms.Label lblUserWarning;
+   }
 }
 

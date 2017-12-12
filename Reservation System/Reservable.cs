@@ -20,7 +20,7 @@ namespace Reservation_System
         public Reservable(int ID)
         {
             id = ID;
-            nextID = ++id;
+            nextID = id + 1;
         }
 
         public Reservable()

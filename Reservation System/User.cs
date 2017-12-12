@@ -25,7 +25,7 @@ namespace Reservation_System
             id = ID;
             name = Name;
             email = Email;
-            nextID = ++id;
+            nextID = id + 1;
         }
 
         public User(string Name, string Email)
