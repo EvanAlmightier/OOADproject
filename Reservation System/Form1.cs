@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace Reservation_System
 {
-   public partial class Form1 : Form
-   {
+    public partial class Form1 : Form
+    {
 
         ReservationManager RM = new ReservationManager();
-        
-      public Form1()
-      {
-         InitializeComponent();
-      }
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,17 +52,25 @@ namespace Reservation_System
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if(IDtext.Text != "" && passwordText.Text != "")
+            if (IDtext.Text != "" && passwordText.Text != "")
             {
-                if(true)
+                if (true)
                 {
-                    pnlLogin.SendToBack();
+                    //pnlLogin.SendToBack();
 
-                    /*
-                    if(RM.GetUser(int.Parse(IDtext.Text)) != null
+                    if (RM.GetUser(int.Parse(IDtext.Text)) != null
                         && passwordText.Text == "password")
+                    {
+                        RM.SetActiveUser(int.Parse(IDtext.Text));
+                        if (RM.GetUser(RM.activeUser).GetType() == "Administrator")
+                            administratorToolStripMenuItem.Visible = true;
                         pnlLogin.SendToBack();
-                    */
+                    }
+                    else
+                    {
+                        txtIncorrectLogin.Visible = true;
+                    }
+
                 }
             }
         }
@@ -70,6 +78,14 @@ namespace Reservation_System
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void IDtext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

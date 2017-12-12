@@ -94,6 +94,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtIncorrectLogin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -301,6 +302,7 @@
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.txtIncorrectLogin);
             this.pnlLogin.Controls.Add(this.passwordText);
             this.pnlLogin.Controls.Add(this.IDtext);
             this.pnlLogin.Controls.Add(this.loginButton);
@@ -317,6 +319,7 @@
             // 
             this.passwordText.Location = new System.Drawing.Point(352, 371);
             this.passwordText.Name = "passwordText";
+            this.passwordText.PasswordChar = '{';
             this.passwordText.Size = new System.Drawing.Size(177, 20);
             this.passwordText.TabIndex = 11;
             // 
@@ -326,6 +329,7 @@
             this.IDtext.Name = "IDtext";
             this.IDtext.Size = new System.Drawing.Size(177, 20);
             this.IDtext.TabIndex = 10;
+            this.IDtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDtext_KeyPress);
             // 
             // loginButton
             // 
@@ -770,6 +774,17 @@
             this.managingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.managingToolStripMenuItem.Text = "Managing";
             // 
+            // txtIncorrectLogin
+            // 
+            this.txtIncorrectLogin.AutoSize = true;
+            this.txtIncorrectLogin.ForeColor = System.Drawing.Color.Maroon;
+            this.txtIncorrectLogin.Location = new System.Drawing.Point(349, 394);
+            this.txtIncorrectLogin.Name = "txtIncorrectLogin";
+            this.txtIncorrectLogin.Size = new System.Drawing.Size(148, 13);
+            this.txtIncorrectLogin.TabIndex = 12;
+            this.txtIncorrectLogin.Text = "ID or Password was incorrect.";
+            this.txtIncorrectLogin.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -881,6 +896,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managingToolStripMenuItem;
+        private System.Windows.Forms.Label txtIncorrectLogin;
     }
 }
 

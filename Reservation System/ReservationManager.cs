@@ -14,7 +14,7 @@ namespace Reservation_System
     {
         public Dictionary<int, User> Users { get; set; }
         public Dictionary<int, Reservable> Reservables { get; set; }
-        public Dictionary<int, Reservation> Reservations{ get; set; }
+        public Dictionary<int, Reservation> Reservations { get; set; }
 
         public int activeUser { get; set; }
 
@@ -25,6 +25,9 @@ namespace Reservation_System
         {
             // read in from text files to each map
             // initialize static variables to next id
+            Users = new Dictionary<int, User>();
+            Reservables = new Dictionary<int, Reservable>();
+            Reservations = new Dictionary<int, Reservation>();
             ReadUsers();
             ReadReservables();
             ReadReservations();
@@ -38,7 +41,7 @@ namespace Reservation_System
         {
             bool users = SaveUsers();
             bool Reservables = SaveReservables();
-            bool Reservations= SaveReservations();
+            bool Reservations = SaveReservations();
             return users && Reservables && Reservations;
         }
 
@@ -93,7 +96,7 @@ namespace Reservation_System
             string email)
         {
             User toAdd = null;
-            if (type == "student")
+            if (type == "Student")
             {
                 toAdd = new Student(id, name, email);
             }
@@ -101,7 +104,7 @@ namespace Reservation_System
             {
                 toAdd = new Instructor(id, name, email);
             }
-            else if (type == "administrator")
+            else if (type == "Administrator")
             {
                 toAdd = new Administrator(id, name, email);
             }
@@ -168,7 +171,7 @@ namespace Reservation_System
         public SortedList<string, User> SortByName()
         {
             SortedList<string, User> names = new SortedList<string, User>();
-            foreach(KeyValuePair<int, User> element in Users)
+            foreach (KeyValuePair<int, User> element in Users)
             {
                 names.Add(element.Value.name, element.Value);
             }
@@ -429,15 +432,15 @@ namespace Reservation_System
         {
             DateTime end = start.AddHours(duration);
 
-            SortedList<int, Reservation > sorted = SortByReservable();
+            SortedList<int, Reservation> sorted = SortByReservable();
 
-            foreach(KeyValuePair<int, Reservation> element in sorted)
+            foreach (KeyValuePair<int, Reservation> element in sorted)
             {
                 if (element.Key != id)
                     sorted.Remove(element.Key);
             }
 
-            foreach(KeyValuePair<int, Reservation> element in sorted)
+            foreach (KeyValuePair<int, Reservation> element in sorted)
             {
                 if (element.Value.resStart >= start && element.Value.resStart <= end)
                     return false;
@@ -466,7 +469,7 @@ namespace Reservation_System
                     {
                         if (element.Key == "Computer")
                             if (Available(element.Value.id, start, duration))
-                            available.Add(element.Value.id, element.Value);
+                                available.Add(element.Value.id, element.Value);
                     }
                 }
                 else if (type == "Room")
@@ -496,7 +499,11 @@ namespace Reservation_System
         /// </summary>
         public void ReadUsers()
         {
-            
+            List<List<string>> userList = ReadFile("users.txt");
+            foreach (List<string> ls in userList)
+            {
+                AddUser(int.Parse(ls[0]), ls[3], ls[1], ls[2]);
+            }
         }
 
         /// <summary>
@@ -517,15 +524,15 @@ namespace Reservation_System
 
         private List<List<string>> ReadFile(string path)
         {
+            string basePath = "./";
             List<List<string>> file = new List<List<string>>();
             using (StreamReader sr = new StreamReader(path))
             {
-                string line = sr.ReadLine();
                 while (!sr.EndOfStream)
                 {
+                    string line = sr.ReadLine();
                     List<string> items = new List<string>(line.Split('|'));
                     file.Add(items);
-                    line = sr.ReadLine();
                 }
             }
             return file;
