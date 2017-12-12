@@ -184,16 +184,17 @@ namespace Reservation_System
         /// <param name="type"></param>
         /// <param name="reserved"></param>
         /// <returns></returns>
-        public bool AddReservable(string type, bool reserved)
+        public bool AddReservable(string type, string RoomID)
         {
             Reservable toAdd = null;
             if (type == "Computer")
             {
-                toAdd = new Computer(reserved);
+                toAdd = new Computer();
+                ((Room)GetReservable(int.Parse( RoomID))).AddComputer((Computer)toAdd);
             }
             else if (type == "Room")
             {
-                toAdd = new Room(reserved);
+                toAdd = new Room();
             }
             else
                 return false;
@@ -209,16 +210,16 @@ namespace Reservation_System
         /// <param name="type"></param>
         /// <param name="reserved"></param>
         /// <returns></returns>
-        public bool AddReservable(int id, string type, bool reserved)
+        public bool AddReservable(int id, string type, string RoomID)
         {
             Reservable toAdd = null;
             if (type == "Computer")
             {
-                toAdd = new Computer(id, reserved);
+                toAdd = new Computer(id);
             }
             else if (type == "Room")
             {
-                toAdd = new Room(id, reserved);
+                toAdd = new Room(id);
             }
             else
                 return false;
@@ -269,7 +270,7 @@ namespace Reservation_System
             if (Reservables.ContainsKey(id))
             {
                 RemoveReservable(id);
-                AddReservable(id, type, reserved);
+                AddReservable(id, type, "");
                 return true;
             }
             return false;
@@ -493,6 +494,20 @@ namespace Reservation_System
 
             return available;
         }
+
+        public int[] GetRoomIDs()
+        {
+            List<int> IDs = new List<int>();
+            foreach(KeyValuePair<int,Reservable> kvp in Reservables)
+            {
+                if(kvp.Value.GetType() == "Room")
+                {
+                    IDs.Add(kvp.Key);
+                }
+            }
+            return IDs.ToArray();
+        }
+
 
         /// <summary>
         /// 

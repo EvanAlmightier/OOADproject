@@ -70,7 +70,6 @@ namespace Reservation_System
                     {
                         txtIncorrectLogin.Visible = true;
                     }
-
                 }
             }
         }
@@ -85,6 +84,58 @@ namespace Reservation_System
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void managingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlManage.BringToFront();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlSearch.BringToFront();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            lstboxAvailable.Items.Add(RM.GetAvailable(cbType.Text,dtpTime.Value,int.Parse(nudDuration.Value.ToString())));
+        }
+
+        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(cbCreateReservable.SelectedItem.ToString() == "Computer")
+            {
+                lstboxCreateComputerRoomList.Items.Clear();
+                lstboxCreateComputerRoomList.Visible = true;
+                int[] IDs = RM.GetRoomIDs();
+                foreach(int i in IDs)
+                {
+                    lstboxCreateComputerRoomList.Items.Add(i);
+                }
+            }
+            else
+            {
+                lstboxCreateComputerRoomList.Visible = false;
+            }
+        }
+
+        private void btnCreateReservable_Click(object sender, EventArgs e)
+        {
+            if (cbCreateReservable.SelectedItem.ToString() == "Room")
+            {
+                RM.AddReservable(cbCreateReservable.SelectedItem.ToString(), "");
+                txtNoRoomSelected.Visible = false;
+            }
+            else
+            {
+                if (lstboxCreateComputerRoomList.SelectedIndex != -1)
+                {
+                    RM.AddReservable(cbCreateReservable.SelectedItem.ToString(), lstboxCreateComputerRoomList.SelectedItem.ToString());
+                    txtNoRoomSelected.Visible = false;
+                }
+                else
+                    txtNoRoomSelected.Visible = true;
             }
         }
     }

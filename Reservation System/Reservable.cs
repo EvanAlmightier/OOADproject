@@ -11,39 +11,26 @@ namespace Reservation_System
         protected static int nextID = 1;
 
         public int id { get; set; }
-        protected bool reserved;
 
         /// <summary>
         /// constructor
         /// </summary>
         /// <param name="id">id number for reservable</param>
         /// <param name="r">Wheather it is reserved on creation</param>
-        public Reservable(int ID, bool r = false)
+        public Reservable(int ID)
         {
             id = ID;
-            reserved = r;
             nextID = ++id;
         }
 
-        public Reservable(bool r = false)
+        public Reservable()
         {
             id = nextID++;
-            reserved = r;
         }
 
         public virtual string GetType()
         {
             return "";
-        }
-
-        public virtual void ResetStatus()
-        {
-            reserved = false;
-        }
-
-        public virtual void SetToReserved()
-        {
-            reserved = true;
         }
 
         public virtual string WriteRooms()
@@ -55,7 +42,6 @@ namespace Reservation_System
         {
             string rooms = null;
             string res = id.ToString();
-            res = res + "|" + reserved.ToString();
             res = res + "|" + GetType();
 
             if (GetType() == "Computer")

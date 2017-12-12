@@ -28,21 +28,21 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSearch = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lstboxAvailable = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstboxReserved = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.sortBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudDuration = new System.Windows.Forms.NumericUpDown();
             this.searchButton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
@@ -52,7 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlManage = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -65,11 +65,11 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.gbCreateReservable = new System.Windows.Forms.GroupBox();
+            this.cbCreateReservable = new System.Windows.Forms.ComboBox();
+            this.lstboxCreateComputerRoomList = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCreateReservable = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -95,18 +95,20 @@
             this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtIncorrectLogin = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtNoRoomSelected = new System.Windows.Forms.Label();
+            this.pnlSearch.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
             this.pnlLogin.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlManage.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbCreateReservable.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -114,24 +116,24 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlSearch
             // 
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.sortBox);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.createButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 634);
-            this.panel1.TabIndex = 6;
+            this.pnlSearch.Controls.Add(this.groupBox3);
+            this.pnlSearch.Controls.Add(this.groupBox2);
+            this.pnlSearch.Controls.Add(this.label4);
+            this.pnlSearch.Controls.Add(this.sortBox);
+            this.pnlSearch.Controls.Add(this.groupBox1);
+            this.pnlSearch.Controls.Add(this.label8);
+            this.pnlSearch.Controls.Add(this.createButton);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSearch.Location = new System.Drawing.Point(0, 24);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(988, 634);
+            this.pnlSearch.TabIndex = 6;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.listBox2);
+            this.groupBox3.Controls.Add(this.lstboxAvailable);
             this.groupBox3.Location = new System.Drawing.Point(290, 167);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(611, 382);
@@ -139,18 +141,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Available";
             // 
-            // listBox2
+            // lstboxAvailable
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(14, 21);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(586, 355);
-            this.listBox2.Sorted = true;
-            this.listBox2.TabIndex = 7;
+            this.lstboxAvailable.FormattingEnabled = true;
+            this.lstboxAvailable.Location = new System.Drawing.Point(14, 21);
+            this.lstboxAvailable.Name = "lstboxAvailable";
+            this.lstboxAvailable.Size = new System.Drawing.Size(586, 355);
+            this.lstboxAvailable.Sorted = true;
+            this.lstboxAvailable.TabIndex = 7;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.lstboxReserved);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox2.Location = new System.Drawing.Point(19, 209);
             this.groupBox2.Name = "groupBox2";
@@ -159,14 +161,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reserved";
             // 
-            // listBox1
+            // lstboxReserved
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(239, 372);
-            this.listBox1.TabIndex = 6;
+            this.lstboxReserved.FormattingEnabled = true;
+            this.lstboxReserved.ItemHeight = 16;
+            this.lstboxReserved.Location = new System.Drawing.Point(12, 27);
+            this.lstboxReserved.Name = "lstboxReserved";
+            this.lstboxReserved.Size = new System.Drawing.Size(239, 372);
+            this.lstboxReserved.TabIndex = 6;
             // 
             // label4
             // 
@@ -182,6 +184,8 @@
             // 
             this.sortBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.sortBox.FormattingEnabled = true;
+            this.sortBox.Items.AddRange(new object[] {
+            "Time"});
             this.sortBox.Location = new System.Drawing.Point(86, 167);
             this.sortBox.Name = "sortBox";
             this.sortBox.Size = new System.Drawing.Size(121, 24);
@@ -192,10 +196,10 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.nudDuration);
             this.groupBox1.Controls.Add(this.searchButton);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.dtpTime);
+            this.groupBox1.Controls.Add(this.cbType);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox1.Location = new System.Drawing.Point(19, 77);
             this.groupBox1.Name = "groupBox1";
@@ -232,22 +236,22 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Duration";
             // 
-            // numericUpDown1
+            // nudDuration
             // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
+            this.nudDuration.Increment = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(663, 43);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudDuration.Location = new System.Drawing.Point(663, 43);
+            this.nudDuration.Maximum = new decimal(new int[] {
             180,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
-            this.numericUpDown1.TabIndex = 4;
+            this.nudDuration.Name = "nudDuration";
+            this.nudDuration.Size = new System.Drawing.Size(120, 26);
+            this.nudDuration.TabIndex = 4;
             // 
             // searchButton
             // 
@@ -257,29 +261,30 @@
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // dateTimePicker1
+            // dtpTime
             // 
-            this.dateTimePicker1.AllowDrop = true;
-            this.dateTimePicker1.CustomFormat = "dddd.MMMM.dd/yyyy HH:mm";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(276, 43);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(290, 23);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpTime.AllowDrop = true;
+            this.dtpTime.CustomFormat = "dddd.MMMM.dd/yyyy HH:mm";
+            this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.Location = new System.Drawing.Point(276, 43);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(290, 23);
+            this.dtpTime.TabIndex = 2;
             // 
-            // comboBox1
+            // cbType
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
             "Computer",
             "Room"});
-            this.comboBox1.Location = new System.Drawing.Point(67, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cbType.Location = new System.Drawing.Point(67, 45);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 24);
+            this.cbType.TabIndex = 1;
             // 
             // label8
             // 
@@ -369,14 +374,14 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Sign In";
             // 
-            // panel3
+            // pnlManage
             // 
-            this.panel3.Controls.Add(this.tabControl1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 24);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(988, 634);
-            this.panel3.TabIndex = 12;
+            this.pnlManage.Controls.Add(this.tabControl1);
+            this.pnlManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlManage.Location = new System.Drawing.Point(0, 24);
+            this.pnlManage.Name = "pnlManage";
+            this.pnlManage.Size = new System.Drawing.Size(988, 634);
+            this.pnlManage.TabIndex = 12;
             // 
             // tabControl1
             // 
@@ -392,7 +397,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.gbCreateReservable);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -498,36 +503,41 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Edit Reservable";
             // 
-            // groupBox4
+            // gbCreateReservable
             // 
-            this.groupBox4.AutoSize = true;
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.listBox3);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(517, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(460, 529);
-            this.groupBox4.TabIndex = 25;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.gbCreateReservable.AutoSize = true;
+            this.gbCreateReservable.Controls.Add(this.txtNoRoomSelected);
+            this.gbCreateReservable.Controls.Add(this.cbCreateReservable);
+            this.gbCreateReservable.Controls.Add(this.lstboxCreateComputerRoomList);
+            this.gbCreateReservable.Controls.Add(this.label9);
+            this.gbCreateReservable.Controls.Add(this.btnCreateReservable);
+            this.gbCreateReservable.Location = new System.Drawing.Point(517, 0);
+            this.gbCreateReservable.Name = "gbCreateReservable";
+            this.gbCreateReservable.Size = new System.Drawing.Size(460, 529);
+            this.gbCreateReservable.TabIndex = 25;
+            this.gbCreateReservable.TabStop = false;
+            this.gbCreateReservable.Text = "Create Reservable";
             // 
-            // comboBox2
+            // cbCreateReservable
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(161, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(144, 21);
-            this.comboBox2.TabIndex = 19;
+            this.cbCreateReservable.FormattingEnabled = true;
+            this.cbCreateReservable.Items.AddRange(new object[] {
+            "Computer",
+            "Room"});
+            this.cbCreateReservable.Location = new System.Drawing.Point(161, 46);
+            this.cbCreateReservable.Name = "cbCreateReservable";
+            this.cbCreateReservable.Size = new System.Drawing.Size(144, 21);
+            this.cbCreateReservable.TabIndex = 19;
+            this.cbCreateReservable.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             // 
-            // listBox3
+            // lstboxCreateComputerRoomList
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(6, 19);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(149, 485);
-            this.listBox3.TabIndex = 24;
-            this.listBox3.Visible = false;
+            this.lstboxCreateComputerRoomList.FormattingEnabled = true;
+            this.lstboxCreateComputerRoomList.Location = new System.Drawing.Point(6, 19);
+            this.lstboxCreateComputerRoomList.Name = "lstboxCreateComputerRoomList";
+            this.lstboxCreateComputerRoomList.Size = new System.Drawing.Size(149, 485);
+            this.lstboxCreateComputerRoomList.TabIndex = 24;
+            this.lstboxCreateComputerRoomList.Visible = false;
             // 
             // label9
             // 
@@ -538,14 +548,15 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Create Reservable";
             // 
-            // button1
+            // btnCreateReservable
             // 
-            this.button1.Location = new System.Drawing.Point(161, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 49);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreateReservable.Location = new System.Drawing.Point(161, 78);
+            this.btnCreateReservable.Name = "btnCreateReservable";
+            this.btnCreateReservable.Size = new System.Drawing.Size(68, 49);
+            this.btnCreateReservable.TabIndex = 23;
+            this.btnCreateReservable.Text = "Create";
+            this.btnCreateReservable.UseVisualStyleBackColor = true;
+            this.btnCreateReservable.Click += new System.EventHandler(this.btnCreateReservable_Click);
             // 
             // tabPage2
             // 
@@ -762,7 +773,8 @@
             // administratorToolStripMenuItem
             // 
             this.administratorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.managingToolStripMenuItem});
+            this.managingToolStripMenuItem,
+            this.searchToolStripMenuItem});
             this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
             this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.administratorToolStripMenuItem.Text = "Administrator";
@@ -773,6 +785,7 @@
             this.managingToolStripMenuItem.Name = "managingToolStripMenuItem";
             this.managingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.managingToolStripMenuItem.Text = "Managing";
+            this.managingToolStripMenuItem.Click += new System.EventHandler(this.managingToolStripMenuItem_Click);
             // 
             // txtIncorrectLogin
             // 
@@ -785,36 +798,54 @@
             this.txtIncorrectLogin.Text = "ID or Password was incorrect.";
             this.txtIncorrectLogin.Visible = false;
             // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            // 
+            // txtNoRoomSelected
+            // 
+            this.txtNoRoomSelected.AutoSize = true;
+            this.txtNoRoomSelected.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtNoRoomSelected.Location = new System.Drawing.Point(162, 131);
+            this.txtNoRoomSelected.Name = "txtNoRoomSelected";
+            this.txtNoRoomSelected.Size = new System.Drawing.Size(218, 13);
+            this.txtNoRoomSelected.TabIndex = 25;
+            this.txtNoRoomSelected.Text = "Please select a room to add the computer to.";
+            this.txtNoRoomSelected.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 658);
+            this.Controls.Add(this.pnlManage);
+            this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.pnlManage.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox7.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbCreateReservable.ResumeLayout(false);
+            this.gbCreateReservable.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -830,21 +861,21 @@
       }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lstboxAvailable;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstboxReserved;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox sortBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudDuration;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Panel pnlLogin;
@@ -854,16 +885,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlManage;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ListBox lstboxCreateComputerRoomList;
+        private System.Windows.Forms.Button btnCreateReservable;
+        private System.Windows.Forms.ComboBox cbCreateReservable;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -881,7 +912,7 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbCreateReservable;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label11;
@@ -897,6 +928,8 @@
         private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managingToolStripMenuItem;
         private System.Windows.Forms.Label txtIncorrectLogin;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.Label txtNoRoomSelected;
     }
 }
 

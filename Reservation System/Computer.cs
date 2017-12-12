@@ -9,12 +9,12 @@ namespace Reservation_System
    class Computer:Reservable
    {
 
-      public Computer(int ID, bool r = false):base(ID,r)
+      public Computer(int ID):base(ID)
       {
 
       }
 
-      public Computer(bool r = false) : base(r)
+      public Computer() : base()
       {
 
       }
