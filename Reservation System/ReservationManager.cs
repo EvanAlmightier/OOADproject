@@ -638,7 +638,18 @@ namespace Reservation_System
       /// <returns></returns>
       public bool SaveUsers()
       {
-         return true;
+         try
+         {
+            List<string> users = new List<string>();
+            foreach (KeyValuePair<int, User> pair in Users)
+            {
+               User user = pair.Value;
+               users.Add(user.WriteUser());
+            }
+            WriteFile("users.txt", users);
+            return true;
+         }
+         catch (Exception e) { return false; }
       }
 
       /// <summary>
@@ -647,7 +658,18 @@ namespace Reservation_System
       /// <returns></returns>
       public bool SaveReservables()
       {
-         return true;
+         try
+         {
+            List<string> reservables = new List<string>();
+            foreach (KeyValuePair<int, Reservable> pair in Reservables)
+            {
+               Reservable reservable = pair.Value;
+               reservables.Add(reservable.WriteReservable());
+            }
+            WriteFile("reservables.txt", reservables);
+            return true;
+         }
+         catch (Exception e) { return false; }
       }
 
       /// <summary>
@@ -656,7 +678,18 @@ namespace Reservation_System
       /// <returns></returns>
       public bool SaveReservations()
       {
-         return true;
+         try
+         {
+            List<string> reservations = new List<string>();
+            foreach (KeyValuePair<int, Reservation> pair in Reservations)
+            {
+               Reservation reservation = pair.Value;
+               reservations.Add(reservation.WriteRes());
+            }
+            WriteFile("reservations.txt", reservations);
+            return true;
+         }
+         catch (Exception e) { return false; }
       }
 
    }
