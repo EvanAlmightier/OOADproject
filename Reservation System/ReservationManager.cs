@@ -582,7 +582,11 @@ namespace Reservation_System
       /// </summary>
       public void ReadReservables()
       {
-
+         List<List<string>> reservablesList = ReadFile("reservables.txt");
+         foreach (List<string> ls in reservablesList)
+         {
+            AddReservable(int.Parse(ls[0]), ls[1], int.Parse(ls[2]));
+         }
       }
 
       /// <summary>
@@ -590,14 +594,22 @@ namespace Reservation_System
       /// </summary>
       public void ReadReservations()
       {
-
+         List<List<string>> reservationsList = ReadFile("reservations.txt");
+         foreach (List<string> ls in reservationsList)
+         {
+            string[] date = ls[3].Split(' ')[0].Split('/');
+            string[] time = ls[3].Split(' ')[1].Split(':');
+            DateTime dt = new DateTime(int.Parse(date[2]), int.Parse(date[0]), int.Parse(date[1]),
+               int.Parse(time[0]), int.Parse(time[1]), 0);
+            AddReservation(int.Parse(ls[0]), int.Parse(ls[1]), int.Parse(ls[2]), dt, double.Parse(ls[4]));
+         }
       }
 
       private List<List<string>> ReadFile(string path)
       {
          string basePath = "./";
          List<List<string>> file = new List<List<string>>();
-         using (StreamReader sr = new StreamReader(path))
+         using (StreamReader sr = new StreamReader(basePath + path))
          {
             while (!sr.EndOfStream)
             {
