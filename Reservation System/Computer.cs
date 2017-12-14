@@ -24,6 +24,11 @@ namespace Reservation_System
          return "Computer";
       }
 
+      public override string ToString()
+      {
+         return id.ToString() + "|" + "Computer";
+      }
+
       public override string WriteRooms()
       {
          return base.WriteRooms();

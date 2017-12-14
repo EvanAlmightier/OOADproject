@@ -29,6 +29,8 @@
       private void InitializeComponent()
       {
          this.pnlSearch = new System.Windows.Forms.Panel();
+         this.btnDeleteReservation = new System.Windows.Forms.Button();
+         this.btnViewReservation = new System.Windows.Forms.Button();
          this.groupBox3 = new System.Windows.Forms.GroupBox();
          this.lstboxAvailable = new System.Windows.Forms.ListBox();
          this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,6 +59,7 @@
          this.tabControl1 = new System.Windows.Forms.TabControl();
          this.tabPage1 = new System.Windows.Forms.TabPage();
          this.gbEditDeleteReservable = new System.Windows.Forms.GroupBox();
+         this.lblEditReservable = new System.Windows.Forms.Label();
          this.btnDeleteReservable = new System.Windows.Forms.Button();
          this.gbEditReservable = new System.Windows.Forms.GroupBox();
          this.lstboxMoveToRoom = new System.Windows.Forms.ListBox();
@@ -75,6 +78,7 @@
          this.tabPage2 = new System.Windows.Forms.TabPage();
          this.gbEditDeleteUser = new System.Windows.Forms.GroupBox();
          this.gbEditUser = new System.Windows.Forms.GroupBox();
+         this.lblEditUserInstructions = new System.Windows.Forms.Label();
          this.lblEditEmail = new System.Windows.Forms.Label();
          this.lblEditName = new System.Windows.Forms.Label();
          this.txtEditName = new System.Windows.Forms.TextBox();
@@ -98,6 +102,7 @@
          this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.managingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.lblEditUser = new System.Windows.Forms.Label();
          this.pnlSearch.SuspendLayout();
          this.groupBox3.SuspendLayout();
          this.groupBox2.SuspendLayout();
@@ -119,6 +124,8 @@
          // 
          // pnlSearch
          // 
+         this.pnlSearch.Controls.Add(this.btnDeleteReservation);
+         this.pnlSearch.Controls.Add(this.btnViewReservation);
          this.pnlSearch.Controls.Add(this.groupBox3);
          this.pnlSearch.Controls.Add(this.groupBox2);
          this.pnlSearch.Controls.Add(this.label4);
@@ -131,6 +138,26 @@
          this.pnlSearch.Name = "pnlSearch";
          this.pnlSearch.Size = new System.Drawing.Size(988, 634);
          this.pnlSearch.TabIndex = 6;
+         // 
+         // btnDeleteReservation
+         // 
+         this.btnDeleteReservation.Location = new System.Drawing.Point(304, 585);
+         this.btnDeleteReservation.Name = "btnDeleteReservation";
+         this.btnDeleteReservation.Size = new System.Drawing.Size(145, 23);
+         this.btnDeleteReservation.TabIndex = 18;
+         this.btnDeleteReservation.Text = "Delete Reservation";
+         this.btnDeleteReservation.UseVisualStyleBackColor = true;
+         this.btnDeleteReservation.Click += new System.EventHandler(this.btnDeleteReservation_Click);
+         // 
+         // btnViewReservation
+         // 
+         this.btnViewReservation.Location = new System.Drawing.Point(304, 555);
+         this.btnViewReservation.Name = "btnViewReservation";
+         this.btnViewReservation.Size = new System.Drawing.Size(145, 23);
+         this.btnViewReservation.TabIndex = 17;
+         this.btnViewReservation.Text = "View My Reservation";
+         this.btnViewReservation.UseVisualStyleBackColor = true;
+         this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
          // 
          // groupBox3
          // 
@@ -164,11 +191,12 @@
          // 
          // lstboxReserved
          // 
+         this.lstboxReserved.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
          this.lstboxReserved.FormattingEnabled = true;
-         this.lstboxReserved.ItemHeight = 16;
+         this.lstboxReserved.ItemHeight = 15;
          this.lstboxReserved.Location = new System.Drawing.Point(12, 27);
          this.lstboxReserved.Name = "lstboxReserved";
-         this.lstboxReserved.Size = new System.Drawing.Size(239, 372);
+         this.lstboxReserved.Size = new System.Drawing.Size(239, 364);
          this.lstboxReserved.TabIndex = 6;
          // 
          // label4
@@ -186,11 +214,13 @@
          this.sortBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
          this.sortBox.FormattingEnabled = true;
          this.sortBox.Items.AddRange(new object[] {
+            "ID",
             "Time"});
          this.sortBox.Location = new System.Drawing.Point(86, 167);
          this.sortBox.Name = "sortBox";
          this.sortBox.Size = new System.Drawing.Size(121, 24);
          this.sortBox.TabIndex = 13;
+         this.sortBox.Text = "ID";
          // 
          // groupBox1
          // 
@@ -281,11 +311,13 @@
          this.cbType.FormattingEnabled = true;
          this.cbType.Items.AddRange(new object[] {
             "Computer",
-            "Room"});
+            "Room",
+            "Any"});
          this.cbType.Location = new System.Drawing.Point(67, 45);
          this.cbType.Name = "cbType";
          this.cbType.Size = new System.Drawing.Size(121, 24);
          this.cbType.TabIndex = 1;
+         this.cbType.Text = "Room";
          // 
          // label8
          // 
@@ -305,6 +337,7 @@
          this.createButton.TabIndex = 11;
          this.createButton.Text = "Create";
          this.createButton.UseVisualStyleBackColor = true;
+         this.createButton.Click += new System.EventHandler(this.createButton_Click);
          // 
          // pnlLogin
          // 
@@ -415,12 +448,13 @@
          this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
          this.tabPage1.Size = new System.Drawing.Size(980, 608);
          this.tabPage1.TabIndex = 0;
-         this.tabPage1.Text = "tabPage1";
+         this.tabPage1.Text = "Reservables";
          this.tabPage1.UseVisualStyleBackColor = true;
          // 
          // gbEditDeleteReservable
          // 
          this.gbEditDeleteReservable.AutoSize = true;
+         this.gbEditDeleteReservable.Controls.Add(this.lblEditReservable);
          this.gbEditDeleteReservable.Controls.Add(this.btnDeleteReservable);
          this.gbEditDeleteReservable.Controls.Add(this.gbEditReservable);
          this.gbEditDeleteReservable.Controls.Add(this.cbEditReservable);
@@ -432,6 +466,16 @@
          this.gbEditDeleteReservable.TabIndex = 26;
          this.gbEditDeleteReservable.TabStop = false;
          this.gbEditDeleteReservable.Text = "Delete/Edit";
+         // 
+         // lblEditReservable
+         // 
+         this.lblEditReservable.AutoSize = true;
+         this.lblEditReservable.Location = new System.Drawing.Point(316, 46);
+         this.lblEditReservable.Name = "lblEditReservable";
+         this.lblEditReservable.Size = new System.Drawing.Size(159, 13);
+         this.lblEditReservable.TabIndex = 27;
+         this.lblEditReservable.Text = "Please Select Reservation Type";
+         this.lblEditReservable.Visible = false;
          // 
          // btnDeleteReservable
          // 
@@ -540,7 +584,7 @@
          // txtNoRoomSelected
          // 
          this.txtNoRoomSelected.AutoSize = true;
-         this.txtNoRoomSelected.ForeColor = System.Drawing.Color.DarkRed;
+         this.txtNoRoomSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
          this.txtNoRoomSelected.Location = new System.Drawing.Point(162, 131);
          this.txtNoRoomSelected.Name = "txtNoRoomSelected";
          this.txtNoRoomSelected.Size = new System.Drawing.Size(218, 13);
@@ -597,12 +641,13 @@
          this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
          this.tabPage2.Size = new System.Drawing.Size(980, 608);
          this.tabPage2.TabIndex = 1;
-         this.tabPage2.Text = "tabPage2";
+         this.tabPage2.Text = "Users";
          this.tabPage2.UseVisualStyleBackColor = true;
          // 
          // gbEditDeleteUser
          // 
          this.gbEditDeleteUser.AutoSize = true;
+         this.gbEditDeleteUser.Controls.Add(this.lblEditUser);
          this.gbEditDeleteUser.Controls.Add(this.gbEditUser);
          this.gbEditDeleteUser.Controls.Add(this.lstboxUsers);
          this.gbEditDeleteUser.Controls.Add(this.cbEditUser);
@@ -616,6 +661,7 @@
          // 
          // gbEditUser
          // 
+         this.gbEditUser.Controls.Add(this.lblEditUserInstructions);
          this.gbEditUser.Controls.Add(this.lblEditEmail);
          this.gbEditUser.Controls.Add(this.lblEditName);
          this.gbEditUser.Controls.Add(this.txtEditName);
@@ -624,10 +670,20 @@
          this.gbEditUser.Controls.Add(this.cbChangeUser);
          this.gbEditUser.Location = new System.Drawing.Point(151, 72);
          this.gbEditUser.Name = "gbEditUser";
-         this.gbEditUser.Size = new System.Drawing.Size(179, 161);
+         this.gbEditUser.Size = new System.Drawing.Size(179, 190);
          this.gbEditUser.TabIndex = 36;
          this.gbEditUser.TabStop = false;
          this.gbEditUser.Text = "Edit User";
+         // 
+         // lblEditUserInstructions
+         // 
+         this.lblEditUserInstructions.AutoSize = true;
+         this.lblEditUserInstructions.Location = new System.Drawing.Point(11, 158);
+         this.lblEditUserInstructions.Name = "lblEditUserInstructions";
+         this.lblEditUserInstructions.Size = new System.Drawing.Size(187, 13);
+         this.lblEditUserInstructions.TabIndex = 39;
+         this.lblEditUserInstructions.Text = "Leave fields that stay the same  empty";
+         this.lblEditUserInstructions.Visible = false;
          // 
          // lblEditEmail
          // 
@@ -713,6 +769,7 @@
          this.btnDeleteUser.TabIndex = 32;
          this.btnDeleteUser.Text = "Delete";
          this.btnDeleteUser.UseVisualStyleBackColor = true;
+         this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
          // 
          // gbCreateUser
          // 
@@ -739,6 +796,7 @@
          this.lblUserWarning.Size = new System.Drawing.Size(76, 13);
          this.lblUserWarning.TabIndex = 35;
          this.lblUserWarning.Text = "Warning Label";
+         this.lblUserWarning.Visible = false;
          // 
          // cbCreateUser
          // 
@@ -850,6 +908,16 @@
          this.searchToolStripMenuItem.Text = "Search";
          this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
          // 
+         // lblEditUser
+         // 
+         this.lblEditUser.AutoSize = true;
+         this.lblEditUser.Location = new System.Drawing.Point(342, 19);
+         this.lblEditUser.Name = "lblEditUser";
+         this.lblEditUser.Size = new System.Drawing.Size(41, 13);
+         this.lblEditUser.TabIndex = 37;
+         this.lblEditUser.Text = "label11";
+         this.lblEditUser.Visible = false;
+         // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,6 +951,7 @@
          this.tabPage2.ResumeLayout(false);
          this.tabPage2.PerformLayout();
          this.gbEditDeleteUser.ResumeLayout(false);
+         this.gbEditDeleteUser.PerformLayout();
          this.gbEditUser.ResumeLayout(false);
          this.gbEditUser.PerformLayout();
          this.gbCreateUser.ResumeLayout(false);
@@ -965,6 +1034,11 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.Label txtNoRoomSelected;
       private System.Windows.Forms.Label lblUserWarning;
+      private System.Windows.Forms.Button btnDeleteReservation;
+      private System.Windows.Forms.Button btnViewReservation;
+      private System.Windows.Forms.Label lblEditReservable;
+      private System.Windows.Forms.Label lblEditUserInstructions;
+      private System.Windows.Forms.Label lblEditUser;
    }
 }
 

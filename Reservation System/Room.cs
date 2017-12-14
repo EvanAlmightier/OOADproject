@@ -60,6 +60,11 @@ namespace Reservation_System
          return false;
       }
 
+      public override string ToString()
+      {
+         return id.ToString() + "|" + "Room";
+      }
+
       public override string WriteRooms()
       {
          string rooms = null;

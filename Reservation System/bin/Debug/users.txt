@@ -1,1 +1,3 @@
-01|Admin|Admin@admin.com|Administrator
+1|Admin|Admin@admin.com|Administrator
+2|ins|instru@gmail.com|Instructor
+3|bill|bill@gmail.com|Student

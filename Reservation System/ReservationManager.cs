@@ -81,6 +81,7 @@ namespace Reservation_System
             return false;
 
          Users.Add(toAdd.id, toAdd);
+         SaveUsers();
          return true;
       }
 
@@ -125,6 +126,7 @@ namespace Reservation_System
          if (Users.ContainsKey(id))
          {
             Users.Remove(id);
+            SaveUsers();
             return true;
          }
          return false;
@@ -159,6 +161,7 @@ namespace Reservation_System
          {
             RemoveUser(id);
             AddUser(id, type, name, email);
+            SaveUsers();
             return true;
          }
          return false;
@@ -200,6 +203,7 @@ namespace Reservation_System
             return false;
 
          Reservables.Add(toAdd.id, toAdd);
+         SaveReservables();
          return true;
       }
 
@@ -234,7 +238,7 @@ namespace Reservation_System
          Reservable tempComputer = GetReservable(computerID);
          RemoveReservable(computerID);
          AddReservable(tempComputer.id, "Computer", endRoomID);
-
+         SaveReservables();
       }
 
       /// <summary>
@@ -263,6 +267,7 @@ namespace Reservation_System
                }
             }
             Reservables.Remove(id);
+            SaveReservables();
             return true;
          }
          return false;
@@ -296,6 +301,7 @@ namespace Reservation_System
          {
             RemoveReservable(id);
             AddReservable(id, type, 0);
+            SaveReservables();
             return true;
          }
          return false;
@@ -328,6 +334,7 @@ namespace Reservation_System
          Reservation toAdd = new Reservation(user, reservable,
              date, duration);
          Reservations.Add(toAdd.id, toAdd);
+         SaveReservations();
          return true;
       }
 
@@ -361,6 +368,7 @@ namespace Reservation_System
          if (Reservations.ContainsKey(id))
          {
             Reservations.Remove(id);
+            SaveReservations();
             return true;
          }
          return false;
@@ -397,6 +405,7 @@ namespace Reservation_System
          {
             RemoveReservation(id);
             AddReservation(id, user, reservable, date, duration);
+            SaveReservations();
             return true;
          }
          return false;
@@ -456,22 +465,20 @@ namespace Reservation_System
 
       public bool Available(int id, DateTime start, double duration)
       {
-         DateTime end = start.AddHours(duration);
+         DateTime end = start.AddMinutes(duration);
 
-         SortedList<int, Reservation> sorted = SortByReservable();
-
-         foreach (KeyValuePair<int, Reservation> element in sorted)
+         foreach (KeyValuePair<int, Reservation> element in Reservations)
          {
-            if (element.Key != id)
-               sorted.Remove(element.Key);
-         }
-
-         foreach (KeyValuePair<int, Reservation> element in sorted)
-         {
-            if (element.Value.resStart >= start && element.Value.resStart <= end)
+            if (element.Value.reservable == id && element.Value.resStart <= end && element.Value.resEnd >= start)
                return false;
-            if (element.Value.resEnd >= start && element.Value.resEnd <= end)
-               return false;
+            if (GetReservable(element.Value.reservable).GetType() == "Room")
+            {
+               foreach (int i in ((Room)GetReservable(element.Value.reservable)).GetComputerIDs())
+               {
+                  if (i == id && element.Value.resStart <= end && element.Value.resEnd >= start)
+                     return false;
+               }
+            }
          }
          return true;
       }
@@ -485,25 +492,24 @@ namespace Reservation_System
       public SortedList<int, Reservable> GetAvailable(string type, DateTime start, int duration)
       {
          SortedList<int, Reservable> available = new SortedList<int, Reservable>();
-         if (type != "None")
+         if (type != "Any")
          {
-            SortedList<string, Reservable> sort = SortByType();
-
             if (type == "Computer")
             {
-               foreach (KeyValuePair<string, Reservable> element in sort)
+               foreach (KeyValuePair<int, Reservable> element in Reservables)
                {
-                  if (element.Key == "Computer")
+                  if (element.Value.GetType() == "Computer")
                      if (Available(element.Value.id, start, duration))
                         available.Add(element.Value.id, element.Value);
                }
             }
             else if (type == "Room")
             {
-               foreach (KeyValuePair<string, Reservable> element in sort)
+               foreach (KeyValuePair<int, Reservable> element in Reservables)
                {
-                  if (element.Key == "Room")
-                     available.Add(element.Value.id, element.Value);
+                  if (element.Value.GetType() == "Room")
+                     if (Available(element.Value.id, start, duration))
+                        available.Add(element.Value.id, element.Value);
                }
             }
             else
@@ -513,7 +519,8 @@ namespace Reservation_System
          {
             foreach (KeyValuePair<int, Reservable> element in Reservables)
             {
-               available.Add(element.Value.id, element.Value);
+               if (Available(element.Value.id, start, duration))
+                  available.Add(element.Value.id, element.Value);
             }
          }
 
@@ -564,6 +571,15 @@ namespace Reservation_System
          return IDs.ToArray();
       }
 
+      public int[] GetReservationIDs()
+      {
+         List<int> IDs = new List<int>();
+         foreach (KeyValuePair<int, Reservation> kvp in Reservations)
+         {
+            IDs.Add(kvp.Key);
+         }
+         return IDs.ToArray();
+      }
 
       /// <summary>
       /// 
@@ -664,7 +680,15 @@ namespace Reservation_System
             foreach (KeyValuePair<int, Reservable> pair in Reservables)
             {
                Reservable reservable = pair.Value;
-               reservables.Add(reservable.WriteReservable());
+               if(reservable.GetType() == "Room")
+               {
+                  reservables.Add(reservable.ToString() + "|" + "0");
+                  foreach(int i in ((Room)reservable).GetComputerIDs())
+                  {
+                     reservables.Add(GetReservable(i).ToString() + "|" + reservable.id.ToString());
+                  }
+               }
+
             }
             WriteFile("reservables.txt", reservables);
             return true;
