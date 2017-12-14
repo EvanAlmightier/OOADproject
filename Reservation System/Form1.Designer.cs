@@ -77,6 +77,7 @@
          this.btnCreateReservable = new System.Windows.Forms.Button();
          this.tabPage2 = new System.Windows.Forms.TabPage();
          this.gbEditDeleteUser = new System.Windows.Forms.GroupBox();
+         this.lblEditUser = new System.Windows.Forms.Label();
          this.gbEditUser = new System.Windows.Forms.GroupBox();
          this.lblEditUserInstructions = new System.Windows.Forms.Label();
          this.lblEditEmail = new System.Windows.Forms.Label();
@@ -102,7 +103,6 @@
          this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.managingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.lblEditUser = new System.Windows.Forms.Label();
          this.pnlSearch.SuspendLayout();
          this.groupBox3.SuspendLayout();
          this.groupBox2.SuspendLayout();
@@ -659,6 +659,16 @@
          this.gbEditDeleteUser.TabStop = false;
          this.gbEditDeleteUser.Text = "Edit/Delete User";
          // 
+         // lblEditUser
+         // 
+         this.lblEditUser.AutoSize = true;
+         this.lblEditUser.Location = new System.Drawing.Point(342, 19);
+         this.lblEditUser.Name = "lblEditUser";
+         this.lblEditUser.Size = new System.Drawing.Size(41, 13);
+         this.lblEditUser.TabIndex = 37;
+         this.lblEditUser.Text = "label11";
+         this.lblEditUser.Visible = false;
+         // 
          // gbEditUser
          // 
          this.gbEditUser.Controls.Add(this.lblEditUserInstructions);
@@ -907,16 +917,6 @@
          this.searchToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
          this.searchToolStripMenuItem.Text = "Search";
          this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
-         // 
-         // lblEditUser
-         // 
-         this.lblEditUser.AutoSize = true;
-         this.lblEditUser.Location = new System.Drawing.Point(342, 19);
-         this.lblEditUser.Name = "lblEditUser";
-         this.lblEditUser.Size = new System.Drawing.Size(41, 13);
-         this.lblEditUser.TabIndex = 37;
-         this.lblEditUser.Text = "label11";
-         this.lblEditUser.Visible = false;
          // 
          // Form1
          // 

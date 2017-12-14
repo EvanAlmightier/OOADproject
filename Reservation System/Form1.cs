@@ -103,6 +103,7 @@ namespace Reservation_System
       {
          if (cbType.SelectedIndex != -1 && int.Parse(nudDuration.Value.ToString()) != 0)
          {
+            // availabel list
             SortedList<int, Reservable> Sorted = RM.GetAvailable(cbType.Text, dtpTime.Value, int.Parse(nudDuration.Value.ToString()));
             lstboxAvailable.Items.Clear();
             var tem = Sorted.OrderBy(id => id.Value.id);
@@ -111,6 +112,24 @@ namespace Reservation_System
             {
                lstboxAvailable.Items.Add(kvp.Value.id);
             }
+            //reserved list
+
+            Dictionary<int, Reservable> Reserved = RM.Reservables;
+            bool found = false;
+            lstboxReserved.Items.Clear();
+            foreach (KeyValuePair<int, Reservable> kvp in Reserved)
+            {
+               foreach (KeyValuePair<int, Reservable> Akvp in Sorted)
+               {
+                  if (kvp.Value.id == Akvp.Value.id)
+                     found = true;
+               }
+               if (!found && (cbType.SelectedItem.ToString() == kvp.Value.GetType() || cbType.SelectedItem.ToString() == "Any"))
+                  lstboxReserved.Items.Add(kvp.Value.id);
+               found = false;
+            }
+
+
          }
          viewingReservations = false;
       }
@@ -140,6 +159,15 @@ namespace Reservation_System
             if (cbCreateReservable.SelectedItem.ToString() == "Room")
             {
                RM.AddReservable(cbCreateReservable.SelectedItem.ToString(), 0);
+               if (cbEditReservable.SelectedIndex != -1 && cbEditReservable.SelectedItem.ToString() == "Room")
+               {
+                  lstboxEditReservable.Items.Clear();
+                  int[] RIDs = RM.GetRoomIDs();
+                  foreach (int i in RIDs)
+                  {
+                     lstboxEditReservable.Items.Add(i);
+                  }
+               }
                txtNoRoomSelected.Visible = true;
                txtNoRoomSelected.Text = "Room Created";
             }
@@ -148,6 +176,27 @@ namespace Reservation_System
                if (lstboxCreateComputerRoomList.SelectedIndex != -1)
                {
                   RM.AddReservable(cbCreateReservable.SelectedItem.ToString(), int.Parse(lstboxCreateComputerRoomList.SelectedItem.ToString()));
+                  if (cbEditReservable.SelectedIndex != -1 && cbEditReservable.SelectedItem.ToString() == "Room" && lstboxEditReservable.SelectedItem.ToString() == lstboxCreateComputerRoomList.SelectedItem.ToString())
+                  {
+                     Reservable r = RM.GetReservable(int.Parse(lstboxEditReservable.SelectedItem.ToString()));
+                     if (r.GetType() == "Room")
+                     {
+                        gbEditReservable.Visible = true;
+                        int[] IDArray = ((Room)r).GetComputerIDs();
+                        lstboxEditComputersInRoom.Items.Clear();
+                        foreach (int i in IDArray)
+                        {
+                           lstboxEditComputersInRoom.Items.Add(i);
+                        }
+                        int[] IDRooms = RM.GetRoomIDs();
+                        lstboxMoveToRoom.Items.Clear();
+                        foreach (int i in IDRooms)
+                        {
+                           lstboxMoveToRoom.Items.Add(i);
+                        }
+                        lstboxMoveToRoom.Items.RemoveAt(lstboxEditReservable.SelectedIndex);
+                     }
+                  }
                   txtNoRoomSelected.Visible = true;
                   txtNoRoomSelected.Text = "Computer Created";
                }
@@ -210,7 +259,22 @@ namespace Reservation_System
                   lstboxEditReservable.Items.Add(i);
                }
             }
+            if (cbCreateReservable.SelectedItem.ToString() == "Computer")
+            {
+               lstboxCreateComputerRoomList.Items.Clear();
+               lstboxCreateComputerRoomList.Visible = true;
+               int[] IDs = RM.GetRoomIDs();
+               foreach (int i in IDs)
+               {
+                  lstboxCreateComputerRoomList.Items.Add(i);
+               }
+            }
+            else
+            {
+               lstboxCreateComputerRoomList.Visible = false;
+            }
             lblEditReservable.Visible = true;
+            lstboxEditComputersInRoom.Items.Clear();
             lblEditReservable.Text = "Reservable Deleted";
          }
          else
@@ -297,6 +361,16 @@ namespace Reservation_System
             {
                RM.AddUser(cbCreateUser.SelectedItem.ToString(), txtUserName.Text, txtUserEmail.Text);
                lblUserWarning.Text = "User: " + txtUserName.Text + " Added to System";
+               if (cbEditUser.SelectedIndex != -1 && cbEditUser.SelectedItem.ToString() == cbCreateUser.SelectedItem.ToString())
+               {
+                  lstboxUsers.Items.Clear();
+                  int[] tempArray = RM.GetUserIDs();
+                  foreach (int i in tempArray)
+                  {
+                     if (RM.GetUser(i).GetType() == cbEditUser.SelectedItem.ToString())
+                        lstboxUsers.Items.Add(i);
+                  }
+               }
             }
             else
             {
@@ -355,6 +429,16 @@ namespace Reservation_System
             RM.AddUser(type, name, email);
             lblEditUser.Visible = true;
             lblEditUser.Text = "User Edited";
+            if (cbChangeUser.SelectedIndex != -1)
+            {
+               lstboxUsers.Items.Clear();
+               int[] tempArray = RM.GetUserIDs();
+               foreach (int i in tempArray)
+               {
+                  if (RM.GetUser(i).GetType() == cbEditUser.SelectedItem.ToString())
+                     lstboxUsers.Items.Add(i);
+               }
+            }
          }
          else
          {
@@ -368,6 +452,38 @@ namespace Reservation_System
          if (lstboxAvailable.SelectedIndex != -1 && !viewingReservations)
          {
             RM.AddReservation(RM.activeUser, int.Parse(lstboxAvailable.SelectedItem.ToString()), dtpTime.Value, int.Parse(nudDuration.Value.ToString()));
+            if (cbType.SelectedIndex != -1 && int.Parse(nudDuration.Value.ToString()) != 0)
+            {
+               // availabel list
+               SortedList<int, Reservable> Sorted = RM.GetAvailable(cbType.Text, dtpTime.Value, int.Parse(nudDuration.Value.ToString()));
+               lstboxAvailable.Items.Clear();
+               var tem = Sorted.OrderBy(id => id.Value.id);
+               //var temp = Sorted.OrderByDescending(id => id.Value.id);
+               foreach (KeyValuePair<int, Reservable> kvp in Sorted)
+               {
+                  lstboxAvailable.Items.Add(kvp.Value.id);
+               }
+               //reserved list
+
+               Dictionary<int, Reservable> Reserved = RM.Reservables;
+               bool found = false;
+               lstboxReserved.Items.Clear();
+               foreach (KeyValuePair<int, Reservable> kvp in Reserved)
+               {
+                  foreach (KeyValuePair<int, Reservable> Akvp in Sorted)
+                  {
+                     if (kvp.Value.id == Akvp.Value.id)
+                        found = true;
+                     if (cbType.SelectedItem.ToString() != kvp.Value.GetType() || cbType.SelectedItem.ToString() == "Any")
+                        found = true;
+                  }
+                  if (!found)
+                     lstboxReserved.Items.Add(kvp.Value.id);
+                  found = false;
+               }
+
+
+            }
          }
          else
          {
@@ -390,6 +506,7 @@ namespace Reservation_System
                lstboxAvailable.Items.Add("Reservation ID:" + i.ToString() + ":" + reservableType + ":" + RM.GetReservation(i).reservable.ToString() + ":" + startDate + ":" + duration);
             }
          }
+         lstboxReserved.Items.Clear();
          viewingReservations = true;
       }
 
@@ -399,6 +516,19 @@ namespace Reservation_System
          if (lstboxAvailable.SelectedIndex != -1 && viewingReservations)
          {
             RM.RemoveReservation(int.Parse(lstboxAvailable.SelectedItem.ToString().Split(':')[1]));
+            int[] IDs = RM.GetReservationIDs();
+            lstboxAvailable.Items.Clear();
+            foreach (int i in IDs)
+            {
+               if (RM.GetReservation(i).reservedBy == RM.activeUser)
+               {
+                  string reservableType = RM.GetReservable(RM.GetReservation(i).reservable).GetType();
+                  string startDate = RM.GetReservation(i).resStart.ToShortDateString() + ":" + RM.GetReservation(i).resStart.ToShortTimeString();
+                  string duration = (RM.GetReservation(i).resEnd - RM.GetReservation(i).resStart).ToString();
+
+                  lstboxAvailable.Items.Add("Reservation ID:" + i.ToString() + ":" + reservableType + ":" + RM.GetReservation(i).reservable.ToString() + ":" + startDate + ":" + duration);
+               }
+            }
          }
          else
          {
@@ -413,6 +543,16 @@ namespace Reservation_System
             RM.RemoveUser(int.Parse(lstboxUsers.SelectedItem.ToString()));
             lblEditUser.Visible = true;
             lblEditUser.Text = "User removed";
+            if (cbEditUser.SelectedIndex != -1)
+            {
+               lstboxUsers.Items.Clear();
+               int[] tempArray = RM.GetUserIDs();
+               foreach (int i in tempArray)
+               {
+                  if (RM.GetUser(i).GetType() == cbEditUser.SelectedItem.ToString())
+                     lstboxUsers.Items.Add(i);
+               }
+            }
          }
          else
          {

@@ -6,52 +6,53 @@ using System.Threading.Tasks;
 
 namespace Reservation_System
 {
-    class Reservable
-    {
-        protected static int nextID = 1;
+   class Reservable
+   {
+      protected static int nextID = 1;
 
-        public int id { get; set; }
+      public int id { get; set; }
 
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="id">id number for reservable</param>
-        /// <param name="r">Wheather it is reserved on creation</param>
-        public Reservable(int ID)
-        {
-            id = ID;
+      /// <summary>
+      /// constructor
+      /// </summary>
+      /// <param name="id">id number for reservable</param>
+      /// <param name="r">Wheather it is reserved on creation</param>
+      public Reservable(int ID)
+      {
+         id = ID;
+         if (id + 1 > nextID)
             nextID = id + 1;
-        }
+      }
 
-        public Reservable()
-        {
-            id = nextID++;
-        }
+      public Reservable()
+      {
+         id = nextID++;
+      }
 
-        public virtual string GetType()
-        {
-            return "";
-        }
+      public virtual string GetType()
+      {
+         return "";
+      }
 
-        public virtual string WriteRooms()
-        {
-            return "";
-        }
+      public virtual string WriteRooms()
+      {
+         return "";
+      }
 
-        public string WriteReservable()
-        {
-            string rooms = null;
-            string res = id.ToString();
-            res = res + "|" + GetType();
+      public string WriteReservable()
+      {
+         string rooms = null;
+         string res = id.ToString();
+         res = res + "|" + GetType();
 
-            if (GetType() == "Computer")
-            {
-                rooms = WriteRooms();
-                res = res + "|" + rooms;
-            }
+         if (GetType() == "Computer")
+         {
+            rooms = WriteRooms();
+            res = res + "|" + rooms;
+         }
 
-            return res;
-        }
+         return res;
+      }
 
    }
 }

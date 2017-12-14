@@ -1,6 +1,7 @@
-1|Room|0
-2|Computer|1
-5|Computer|1
-7|Room|0
-6|Computer|7
 8|Room|0
+20|Computer|8
+21|Computer|8
+22|Computer|8
+10|Room|0
+15|Computer|10
+16|Computer|10
